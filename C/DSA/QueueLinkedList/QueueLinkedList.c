@@ -74,7 +74,6 @@ void insert_end(int ele){
 	tmp1->data = ele;
 	
 	tmp1->next = NULL;
-	
 	if( p == NULL){
 		
 		p = tmp1;
