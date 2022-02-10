@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-// in RECURSION we call ours main function again and again and we built an Activation Record in an internal Stack
+// in RECURSION we call ours main function again and again and we built an Activation Record in an internal Stack.
 
 int BinarySearch(int arr[], int item, int beg, int end){
 	
