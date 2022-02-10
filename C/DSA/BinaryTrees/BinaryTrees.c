@@ -105,5 +105,5 @@ int main(void){
 	printf("\n display element in postorder:-");
 	postorder(root);
 	
-	return-1;
+	return 0;
 }
