@@ -9,40 +9,47 @@ void display( int arr[], int size){
 	printf("\n");
 }
 
-void InsertionSort( int arr[], int size){
+
+// basically we used K-sort when we've almost sorted array
+// we'll use k instead of temp in K-sort and rest code is almost same as insertion sort
+
+void InsertionSortK( int arr[], int size){
 	
-	for (int i = 1; i < size; i++){ // just like playing cards the first card (element) we've is sorted and we'll starts from 1st index not from 0th coz 0th is sorted part and we'll check
+	int i, j, k;
+	
+	for (int i = 1; i < size; i++){
 		
-		int tmp = arr[i]; // the element at i will be stored in tmp variable
+		k = arr[i];
+		j = i - 1;
 		
-		int j = i - 1; 
-		
-		while( j >= 0 && tmp < arr[j]){
+		while( j >= 0 && arr[j] > k){
 			
 			arr[ j + 1 ] = arr[j];
+			j = j-1;
 			
-			j--;
 		}
-		arr[j+1] = tmp;
+		arr[ j+1 ] = k;		
 	}
 }
 
 
 int main(void){
 	
-	int arr[] = {10, 5, 6, 20};
+	int arr[] = {6, 5, 3, 2, 8, 10, 9, 11};
 	
 	int size = (sizeof(arr) / sizeof(int));
 	
 	printf("The total elements are %i", size - 1);
 
+	int k = 3; // means maximum iteartion can be 3
+	
 	printf("\nElements before sortation: ");
 	
 	display(arr, size);
 	
 	printf("Elements after sortation: ");
 	
-	InsertionSort(arr, size);
+	InsertionSortK(arr, size);
 	
 	display(arr, size);
 	
