@@ -11,13 +11,15 @@ struct stack{
 	
 };
 
+// since in stack RECURSION is maintained internally therefore we'll return ours function again and again
+
 struct stack* create(unsigned size){
 	
 	struct stack* stack = (struct stack*)malloc(sizeof(struct stack));
 	
 	stack->size = size;
 	
-	stack->top = -1;
+	stack->top = -1; //because index starts from 0 -1 means empty
 	
 	stack->array = (int*)malloc(stack->size * sizeof(int));
 	
@@ -26,7 +28,7 @@ struct stack* create(unsigned size){
 
 int isFull(struct stack* stack){
 
-	return stack->top == stack->size -1;
+	return stack->top == stack->size -1; // stack->top means access of top
 	
 }
 
@@ -41,7 +43,10 @@ void push(struct stack* stack, int item){
 	if(isFull(stack)){
 		return;
 	}
-	stack->array[++stack->top] = item;
+	// if ours if didn't work means there is still some space left
+	else{
+		stack->array[++stack->top] = item; // item will be the element we'll PUSH (enter)
+	}
 }
 
 int pop(struct stack* stack){
@@ -49,7 +54,9 @@ int pop(struct stack* stack){
 	if(isEmpty(stack)){
 		return -1;
 	}
-	return stack->array[stack->top--];
+	else{
+		return stack->array[stack->top--];
+	}
 }
 
 
@@ -58,7 +65,9 @@ int peek(struct stack* stack){
 	if(isEmpty(stack)){
 		return INT_MIN;
 	}
-	return stack->array[stack->top];
+	else{
+		return stack->array[stack->top];
+	}
 }
 
 

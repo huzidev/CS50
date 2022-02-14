@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
+#include <cs50.c>
 
 struct node{
 	int data;
@@ -13,8 +14,6 @@ void insert_beg(int);
 void insert_end(int);
 void delete(int);
 void display();
-
-
 
 
 void insert_beg(int ele){
@@ -35,11 +34,11 @@ void insert_end(int ele){
 	tmp1->next = NULL; //bcz at end there will be NULL after the last node
 	
 	
-	if ( p == NULL ){
+	if ( p == NULL ){ // we use if conditon in insert_end becasue what if P is completely empty and user tried to insert value at end	
 		p = tmp1;
 	}
 	else{
-		while(tmp->next != NULL){
+		while(tmp->next != NULL){ // we didn't wrote tmp->data coz data can be any value even 0 which is NULL value
 			tmp = tmp->next;
 		}
 		tmp->next = tmp1;
@@ -78,8 +77,8 @@ void delete_end(){
 			pre = tmp;
 			tmp = tmp->next;
 		}
-		pre->next = NULL;
 		printf("\n element deleted - %d", tmp->data);
+		pre->next = NULL;
 	}
 }
 
@@ -113,7 +112,7 @@ int main(void){
 		printf("\n6. EXIT");
 		printf("\n Enter yours chouice : ");
 		scanf("%d", &n);
-		
+	
 		switch(n){
 			
 			case 1:
