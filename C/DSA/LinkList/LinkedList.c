@@ -5,10 +5,10 @@
 struct node{
 	int data;
 	
-	struct node *next;
+	struct node* next; // *next becasue start (Asterisk) sign is used for pointer and next part of node just works as pointer for next node
 }*p, *tmp, *tmp1;
 
-
+// PROTOTYPES
 void insert_beg(int);
 void insert_end(int);
 void delete(int);
@@ -24,6 +24,7 @@ void insert_beg(int ele){
 	tmp1->data = ele;
 	tmp1->next = p;
 	p = tmp1;
+	
 }
 
 void insert_end(int ele){
@@ -31,14 +32,15 @@ void insert_end(int ele){
 	tmp = p;
 	tmp1 = (struct node*)malloc(sizeof(struct node));
 	tmp1->data = ele;
-	tmp1->next = NULL;
+	tmp1->next = NULL; //bcz at end there will be NULL after the last node
 	
-	if ( p == NULL){
+	
+	if ( p == NULL ){
 		p = tmp1;
 	}
 	else{
 		while(tmp->next != NULL){
-			tmp= tmp->next;
+			tmp = tmp->next;
 		}
 		tmp->next = tmp1;
 	}
@@ -49,12 +51,12 @@ void delete_beg(){
 	
 	tmp = p;
 	
-	if( p == NULL){
+	if( p == NULL ){
 		printf("\n no element to be deleted!");
 	}
 	else{
-		printf("\n element deleted - %d", p->data);
-		p = p->next;
+		printf("\n element deleted - %d", p->data); //p->data means the data (value) we deleted
+		p = p->next; // since we delete from beg hence now points towards next node
 	}
 }
 
@@ -62,13 +64,14 @@ void delete_end(){
 	
 	tmp = p;
 	
-	struct node* pre;
+	struct node* pre; // in case the last elements next isn't null
+	
 	if( p ==  NULL){
 		printf("\n no element to be deleted");
 	}
 	else if(p->next == NULL){
 		printf("\n element deleted - %d", p->data);
-		p = NULL;
+		p = NULL; // since we delete from end now points towards NULL
 	}
 	else{
 		while(tmp->next != NULL){
@@ -84,6 +87,12 @@ void delete_end(){
 void display(){
 	
 	tmp = p;
+	
+	if( p == NULL ){
+		
+		printf("LIST EMPTY! no element is available to be view\n");
+		
+	}
 	while(tmp != NULL){
 		printf("\n %d", tmp->data);
 		tmp = tmp->next;
@@ -115,7 +124,7 @@ int main(void){
 			
 			case 2:
 				printf("\n Enter the value : ");
-				scanf("%d", &val);
+				scanf("%d", &val); 
 				insert_end(val);
 				break;
 				
@@ -141,5 +150,7 @@ int main(void){
 		}
 		printf("\n do you wanna continue... ");
 	}
-	while('y' == getch());
+	while('y' == getch()); //getch() pauses the Output Console until a specific key we assigned is pressed
+	
+	return 0;
 }
