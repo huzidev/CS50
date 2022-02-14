@@ -33,7 +33,7 @@ void merge(int arr[], int beg, int mid, int end){
 	
 	while( i < len1 && j < len2){
 		
-		if( LeftArr[i] <= RightArr[j]){
+		if( LeftArr[i] < RightArr[j]){
 			
 			arr[k] = LeftArr[i];
 			i++;
@@ -78,9 +78,9 @@ void MergeSort(int arr[], int beg, int end){
 	}
 }
 
-void display(int arr[], int size){
+void Print(int arr[], int size){
 	
-	for( int i = 0; i <= size; i++){
+	for( int i = 0; i < size; i++){
 		
 		printf("%d ", arr[i]);
 		
@@ -94,17 +94,17 @@ int main(void){
 	
 	int size = (sizeof(arr) / sizeof(int));
 	
-	printf("Total elements are %i\n", size - 1);
+	printf("Total elements are %i\n", size-1);
 	
 	printf("Before Sorting: ");
 	
-	display(arr, size);
+	Print(arr, size);
 	
 	printf("\nAfter Sorting: ");
 	
-	MergeSort(arr, 0, size);
+	MergeSort(arr, 0, size-1); // for last index size - 1
 	
-	display(arr, size);	
+	Print(arr, size);	
 	
 	return 0;
 }
