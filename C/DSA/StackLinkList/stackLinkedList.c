@@ -8,14 +8,79 @@ struct node{
 	
 	struct node *next;
 	
-}*p, *tmp, *tmp1, *end;
+}*p, *tmp;
 	
 // PROTOTYPES
 void insert(int);
-void display();
 void ldelete();
+void display();
 void isEmpty();
 
+
+void insert(int ele){
+	
+	tmp = p;
+	
+	tmp = (struct node*)malloc(sizeof(struct node));
+	
+	tmp->data = ele;
+	
+	if( p == NULL ){
+		tmp->next = NULL;
+	}
+	else{
+		tmp->next = p;
+	}
+	p = tmp;
+}
+
+void ldelete(){
+	
+	tmp = p;
+	
+	if( p == NULL ){
+		
+		printf("\n no element to be deleted!");
+		
+	}
+	else{
+		
+		printf("\n element deleted - %d", p->data);
+		p = p->next;
+	}
+}
+
+void isEmpty(){
+	
+	if( p == NULL ){
+		
+		printf("\n stack is empty");
+		
+	}
+	
+	else{
+		
+		printf("\n stack is not empty");
+		
+	}
+}
+
+void display(){
+	
+	tmp = p;
+	
+	if( p == NULL ){
+		
+		printf("EMPTY ARRAY! no elements is available");
+		
+	}
+	else{
+		while(tmp != NULL){
+			printf("\n %d", tmp->data);
+			tmp = tmp->next;
+		}
+	}
+}
 
 int main(void){
 	
@@ -62,46 +127,6 @@ int main(void){
 		printf("\n do you wanna continue");
 	}
 		while('y' == getch());
+		return 0;
 }
 
-void insert(int ele){
-	tmp = (struct node*)malloc(sizeof(struct node));
-	tmp->data = ele;
-	
-	if( p == NULL){
-		tmp->next = NULL;
-	}
-	else{
-		tmp->next = p;
-	}
-	p = tmp;
-}
-
-void ldelete(){
-	tmp = p;
-	if( p == NULL){
-		printf("\n no element to be deleted!");
-	}
-	else{
-		printf("\n element deleted - %d", p->data);
-		p = p->next;
-	}
-}
-
-void isEmpty(){
-	if( p == NULL){
-		printf("\n stack is empty");
-	}
-	else{
-		printf("\n stack is not empty");
-	}
-}
-
-void display(){
-	
-	tmp = p;
-	while(tmp != NULL){
-		printf("\n %d", tmp->data);
-		tmp = tmp->next;
-	}
-}

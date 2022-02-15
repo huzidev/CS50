@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 struct que{
-	int front, rear, size; // front, rear are basically just poinetrs
+	int front, rear, size; // front, rear are basically just poinetrs (BECAUSE) of contigious memory
 	
 	unsigned actualSize; // the total size of array
 	
@@ -20,7 +20,7 @@ struct que* createque(unsigned actualSize){
 	
 	que->front = que->rear = -1; // means if front and rear are equal to -1 means array is empty
 	
-	que->arr = (int*)malloc(que->actualSize * sizeof(int));
+	que->arr = (int*)malloc( que->actualSize * sizeof(int));
 	
 	return que;
 	
@@ -32,7 +32,7 @@ struct que* createque(unsigned actualSize){
 
 int isFull(struct que* que){
 	
-	return (que->size == que->actualSize); // compare size of que and actualSize of array IF they are equal means que is full
+	return ( que->size == que->actualSize); // compare size of que and actualSize of array IF they are equal means que is full
 	
 }
 
@@ -40,19 +40,19 @@ void enqueue(struct que* que, int item){
 	
 	if(isFull(que)){
 
-		return;
+		return; // to overcome overflow
 
 	}
 	
 	que->rear = que->rear +1; // BEACUSE INSERTION always takes place from rear end
 	
-	que->arr[que->rear] =  item; // the item means value we will insert
+	que->arr[que->rear] = item; // the item means value we will insert
 	
 	que->size = que->size +1; // obviously size will increase but actual size will remains same 
 	
 	if(que->front == -1){
 		
-		que->front++; // coz if -1 means list is EMPTY then assigned the value to fornt ONLY IF INITIALLY OURS QUE IS EMPTY therefore we wrote == -1
+		que->front++; // coz if -1 means list is EMPTY then assigned the value to frnnt ONLY IF INITIALLY OURS QUE IS EMPTY therefore we wrote == -1
 		
 	}
 	printf("%d enqueued to que\n", item);
@@ -79,7 +79,7 @@ int dequeue(struct que* que){
 	if(que->front == que->rear){ // if front is equal to rear means QUE IS empty
 		
 		que->front = que->rear = -1;
-		
+	
 	}	
 	else{
 	
@@ -103,6 +103,7 @@ int front(struct que* que){
 	}
 	return que->arr[que->front]; // return whatever the front value is
 }
+
 
 int rear(struct que* que){
 	

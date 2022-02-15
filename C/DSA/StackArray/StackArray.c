@@ -21,7 +21,7 @@ struct stack* create(unsigned size){
 	
 	stack->top = -1; //because index starts from 0 -1 means empty
 	
-	stack->array = (int*)malloc(stack->size * sizeof(int)); // because we've to specify the size in case of array
+	stack->array = (int*)malloc( stack->size * sizeof(int)); // because we've to specify the size in case of array
 	
 	return stack; // because stack maintain recursion therefore return
 }
