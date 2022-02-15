@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
-#include <cs50.c>
+
 
 struct node{
 	int data;

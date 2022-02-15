@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
-
+#include <cs50.c>
 struct stack{
 	int top;
 	
-	unsigned size;
+	unsigned size; // when we dont know the actual size of array etc
 	
 	int* array;
 	
@@ -21,9 +21,9 @@ struct stack* create(unsigned size){
 	
 	stack->top = -1; //because index starts from 0 -1 means empty
 	
-	stack->array = (int*)malloc(stack->size * sizeof(int));
+	stack->array = (int*)malloc(stack->size * sizeof(int)); // because we've to specify the size in case of array
 	
-	return stack;
+	return stack; // because stack maintain recursion therefore return
 }
 
 int isFull(struct stack* stack){
@@ -33,12 +33,12 @@ int isFull(struct stack* stack){
 }
 
 int isEmpty(struct stack* stack){
-
+	
 	return stack->top == -1;
 	
 }
 
-void push(struct stack* stack, int item){
+void push(struct stack* stack, int item){ // we used void therefore we can pas int item as argument and item is the element we'll insert
 	
 	if(isFull(stack)){
 		return;
@@ -63,7 +63,7 @@ int pop(struct stack* stack){
 int peek(struct stack* stack){
 	
 	if(isEmpty(stack)){
-		return INT_MIN;
+		return INT_MIN; // value of int min is basically -2147483648 and of INT_MAX is +2147483648
 	}
 	else{
 		return stack->array[stack->top];
@@ -81,6 +81,7 @@ int main(void){
 		printf("\n3.PEEK");
 		printf("\n4.IS EMPTY");
 		printf("\n5.EXIT");
+		printf("\n6.is Full");
 		printf("\n. enter yours choice : ");
 		scanf("%d", &n);
 		
@@ -107,6 +108,9 @@ int main(void){
 				exit(0);
 				break;
 				
+			case 6:
+				printf("\n is full : %d", isFull(stack));
+				break;
 			default:
 				printf("\n wrong choice!");
 				break;								
