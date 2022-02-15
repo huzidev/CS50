@@ -2,11 +2,11 @@
 
 void BubbleSort(int arr[], int size){
 	
-	for(int i = 0; i < size; i++){
+	for(int i = 0; i < size; i++){ // first loop will moves ours biggest element at right and therefore we'll use size-i-1
 		
-		for(int j = 0; j < size-i-1; j++){
+		for(int j = 0; j < size-i-1; j++){ // size-i-1 is because so ours biggest element will remain at end and and wont changed
 			
-			if(arr[j] > arr[j+1]){
+			if(arr[j] > arr[j+1]){ // for descending order just change this sign to less than sign
 				
 				int temp = arr[j];
 				
@@ -21,12 +21,13 @@ void BubbleSort(int arr[], int size){
 
 void PrintArray(int arr[], int size){
 	
-	int i;
-	for( i = 0; i < size; i++){
+
+	for(int i = 0; i < size; i++){
 		
 		printf("%d ", arr[i]);
 		
 	}
+	printf("\n");
 	
 }
 
