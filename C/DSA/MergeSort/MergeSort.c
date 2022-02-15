@@ -5,11 +5,10 @@
 void merge(int arr[], int beg, int mid, int end){
 	
 	int len1 = mid - beg + 1;
-//	printf("%i ", len1);
 	
 	int len2 = end - mid;
 	
-	int LeftArr[len1], RightArr[len2];
+	int LeftArr[len1], RightArr[len2]; // coz ours MAIN array will became left and right array
 	
 	for( int i = 0; i < len1; i++){
 		
@@ -19,7 +18,7 @@ void merge(int arr[], int beg, int mid, int end){
 	
 	for( int j = 0; j < len2; j++){
 		
-		RightArr[j] = arr[mid + 1 + j ];
+		RightArr[j] = arr[mid + 1 + j ]; // mid + 1 is for right array
 		
 	}
 	
@@ -35,20 +34,20 @@ void merge(int arr[], int beg, int mid, int end){
 		
 		if( LeftArr[i] < RightArr[j]){
 			
-			arr[k] = LeftArr[i];
+			arr[k] = LeftArr[i]; // for descending order we simply replace leftArr[i] with rightArr[j]
 			i++;
 			
 		}
 		else{
 			
-			arr[k] = RightArr[j];
+			arr[k] = RightArr[j];  // for descending order we simply replace rightArr[j] with leftArr[i]
 			j++;
 			
 		}
 		k++; // so after taking an element we'll move toward next index in new array so k will be available at next for new element
 	}
 	
-	while( i < len1){
+	while( i < len1 ){
 		
 		arr[k] = LeftArr[i];
 		i++;
@@ -68,7 +67,7 @@ void merge(int arr[], int beg, int mid, int end){
 
 void MergeSort(int arr[], int beg, int end){
 	
-	if( beg < end){
+	if( beg < end ){ // if beg is not less than end then this means that ours array is empty
 		
 		int mid = beg + ( end - beg ) / 2;
 		MergeSort(arr, beg, mid); // for left array
