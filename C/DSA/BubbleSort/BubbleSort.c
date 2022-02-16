@@ -8,11 +8,11 @@ void BubbleSort(int arr[], int size){
 			
 			if(arr[j] > arr[j+1]){ // for descending order just change this sign to less than sign
 				
-				int temp = arr[j];
+				int temp = arr[j]; // the value of j is convert into temp
+				 
+				arr[j] = arr[j+1]; // the valueof j + 1 is converted into j  now j+1 is empty
 				
-				arr[j] = arr[j+1];
-				
-				arr[j+1] = temp;
+				arr[j+1] = temp; // now temp value which is greater value we get from j is now converted into j+1 called SWAPING
 				
 			}
 		}	
