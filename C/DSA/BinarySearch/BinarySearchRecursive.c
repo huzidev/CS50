@@ -9,7 +9,6 @@ int BinarySearch(int arr[], int item, int beg, int end){
 		
 		int midIndex = beg + ( end - beg ) / 2;
 		
-		
 		if(arr[midIndex] == item ){
 			
 			return midIndex;

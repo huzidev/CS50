@@ -1,10 +1,10 @@
 #include <stdio.h>
-
+#include <cs50.c>
 void BubbleSort(int arr[], int size){
 	
 	for(int i = 0; i < size; i++){ // first loop will moves ours biggest element at right and therefore we'll use size-i-1
 		
-		for(int j = 0; j < size-i-1; j++){ // size-i-1 is because so ours biggest element will remain at end and and wont changed
+		for(int j = 0; j < size-1; j++){ // size-i-1 is because so ours biggest element will remain at end and and wont changed
 			
 			if(arr[j] > arr[j+1]){ // for descending order just change this sign to less than sign
 				
@@ -33,7 +33,17 @@ void PrintArray(int arr[], int size){
 
 int main(void){
 	
-	int arr[] = {25, 20, 6, 98, 3, 4, 1, 0, 54, 36, 4, 2};
+//	int arr[] = {25, 20, 6, 98, 3, 4, 1, 0, 54, 36, 4, 2};
+
+	int n = get_int("How many elements you wana sort?");
+	
+	int arr[n];
+	
+	for(int i = 0; i < n; i++){
+		
+		arr[i] = get_int("Value: ");
+
+	}
 	
 	int size = (sizeof(arr) / sizeof(int));
 	
