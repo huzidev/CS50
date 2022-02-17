@@ -27,8 +27,7 @@ void PrintArray(int arr[], int size){
 		printf("%d ", arr[i]);
 		
 	}
-	printf("\n");
-	
+	printf("\n");	
 }
 
 int main(void){
@@ -39,25 +38,32 @@ int main(void){
 	
 	int arr[n];
 	
-	for(int i = 0; i < n; i++){
+	if ( n == NULL ){
 		
-		arr[i] = get_int("Value: ");
-
+		printf("\nYou didn't insert appropriate value");
+		
 	}
 	
-	int size = (sizeof(arr) / sizeof(int));
+	else{
+		for(int i = 0; i < n; i++){
+			
+			arr[i] = get_int("Value: ");
 	
-	printf("The total number of elements are %i\n", size - 1);
-	
-	printf("Before sorting the array: ");
-	
-	PrintArray(arr, size);
-	
-	printf("\nAfter Sorting the array with Bubble Sort: ");
-	
-	BubbleSort(arr, size);
-	
-	PrintArray(arr, size);
-	
+		}
+		
+		int size = (sizeof(arr) / sizeof(int));
+		
+		printf("The total number of elements are %i\n", size - 1);
+		
+		printf("Before sorting the array: ");
+		
+		PrintArray(arr, size);
+		
+		printf("\nAfter Sorting the array with Bubble Sort: ");
+		
+		BubbleSort(arr, size);
+		
+		PrintArray(arr, size);
+	}
 	return 0;
 }

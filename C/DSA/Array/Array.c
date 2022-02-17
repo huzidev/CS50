@@ -18,22 +18,31 @@ int main(Void){
 	
 	int array[n]; // acc to size of ours element ours array will be of that size
 	
-	for(int i = 0; i < n; i++){ 
-	
-		array[i] = get_int("value: ");
-			
-	}
-	
-	int size = (sizeof(array) / sizeof(int));
-	
-	printf("the total elements are %i\n", (size-1));
-	
-	for(int i = 0; i < n; i++){ // will iterate till the size of ours (N)
-	
-		printf("%d ", array[i]);
+	if ( n == NULL ){
+		
+		printf("\nYou didn't insert appropriate value");
 		
 	}
 	
+	else{
+		
+		for(int i = 0; i < n; i++){ 
+		
+			array[i] = get_int("value: ");
+				
+		}
+		
+		int size = (sizeof(array) / sizeof(int));
+		
+		printf("the total elements are %i\n", (size-1));
+		
+		for(int i = 0; i < n; i++){ // will iterate till the size of ours (N)
+		
+			printf("%d ", array[i]);
+			
+		}
+	
+	}
 //	print(array, n);
 	
 	return 0;

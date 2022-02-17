@@ -46,7 +46,7 @@ int main(void){
 		
 	}
 	
-	if( n == NULL){
+	if( n == NULL ){
 		
 		printf("\nYou didn't insert appropriate value");
 		
