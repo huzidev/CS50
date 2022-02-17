@@ -17,7 +17,7 @@ int Partition(int arr[], int beg, int end){
 	
 	for( int i = beg; i < end; i++){ // why we said < end is because the last one is ours PIVOT 
 		
-		if ( arr[i] < pivot ){ // 14, 17, 8, 90, 11, 2 there 2 is ours PIVOT
+		if ( arr[i] > pivot ){ // 14, 17, 8, 90, 11, 2 there 2 is ours PIVOT
 			
 			pIndex++; // coz it is at -1 index
 
@@ -27,14 +27,14 @@ int Partition(int arr[], int beg, int end){
 	}// remember the comparsion will be with every element with the PIVOT one because of FOR loop
 	
 	
-	SwapElements(&arr[pIndex + 1 ], &arr[end]); // now if ours arr[i] didn't result in lesser than any element we just swap the beg and end with each other
+	SwapElements(&arr[ pIndex + 1 ], &arr[end]); // now if ours arr[i] didn't result in lesser than any element we just swap the beg and end with each other
 	
 	return (pIndex + 1); // since it is a recursive function therefore we says return coz recursive functions call itself again and again	
 }
 
 void QuickSort(int arr[], int beg, int end){
 	
-	if( beg < end){
+	if( beg < end ){
 		
 		int pIndex = Partition(arr, beg, end);
 		
@@ -52,6 +52,7 @@ void Print(int arr[], int size){
 		printf("%d ", arr[i]);
 		
 	}
+	printf("\n");
 	
 }
 
@@ -69,7 +70,7 @@ int main(void){
 	
 	printf("\nAfter sorting: ");
 	
-	QuickSort(arr, 0, size);
+	QuickSort(arr, 0, size-1);
 	
 	Print(arr, size);
 	

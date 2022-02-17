@@ -4,7 +4,7 @@
 
 int BinarySearch(int arr[], int item, int beg, int end){
 	
-	if( end >= beg ){
+	while( beg <= end ){
 		
 		int midIndex = beg + ( end - beg ) / 2;
 		
@@ -17,18 +17,16 @@ int BinarySearch(int arr[], int item, int beg, int end){
 		
 		else if(arr[midIndex] > item){
 			
-			return BinarySearch(arr, item, beg, midIndex + 1); // this is call RECUSION call the main function again & again
+			return BinarySearch(arr, item, midIndex - 1, end); // this is call RECUSION call the main function again & again
 			// since BinarySearch is the name of ours main function therefore we're calling or making a recursive calls			
 		}
 		
 		else{
 			
-			return BinarySearch(arr, item, midIndex - 1, end);
+			return BinarySearch(arr, item, beg, midIndex + 1);
 			
 		}
-		
 	}
-	
 	return -1;
 }
 

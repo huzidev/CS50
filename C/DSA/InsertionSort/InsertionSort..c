@@ -1,6 +1,8 @@
 #include <stdio.h>
 
-void display( int arr[], int size){
+// like playing card first card will be sorted coz we've just one card and that will be sorted
+
+void print( int arr[], int size){
 	
 	for( int i = 0; i < size; i++){
 		
@@ -30,7 +32,7 @@ void InsertionSort( int arr[], int size){
 
 int main(void){
 	
-	int arr[] = {10, 5, 6, 20};
+	int arr[] = {10, 5, 6, 20};	
 	
 	int size = (sizeof(arr) / sizeof(int));
 	
@@ -38,13 +40,13 @@ int main(void){
 
 	printf("\nElements before sortation: ");
 	
-	display(arr, size);
+	print(arr, size);
 	
 	printf("Elements after sortation: ");
 	
 	InsertionSort(arr, size);
 	
-	display(arr, size);
+	print(arr, size);
 	
 	return 0;
 }

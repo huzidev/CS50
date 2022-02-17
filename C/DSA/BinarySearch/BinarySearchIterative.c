@@ -1,32 +1,32 @@
 #include <stdio.h>
 
-// this is basically the iterative algorithm for BinarySearch 
-// in iterative algorithm we used LOOPS while in recursive algorithm for binary search tree we used functions that Re-Call themself and forms Activation Chart and internal stacks
-
-int BinarySearch(int arr[], int item, int beg, int end){
+int binarysearch(int arr[], int item, int beg, int end){
 	
-	while( beg <= end ){ //beg can't be greater than end
- 		
-		int midIndex = beg + ( end - beg ) / 2; // we did it so we can get rid of overflow conditons coz suppose we've biggest element aka end int of 200 and begining elment is 100 so 100(200-100) / 2 is 200 / 2 which is in range
+	while( beg <= end){
+		int mid;
 		
-		if( arr[midIndex] == item ){// item is element we wanna search
+		mid = beg + ( end - beg ) / 2;
+		
+		if(arr[mid] == item){
 			
-			return midIndex;
+			return mid;
+	
 		}
-		else if(arr[midIndex] < item){ // if item we searched for is bigger than midindex we simply divide and remove the beg part
- 			
-			beg = midIndex + 1;
+		else if( arr[mid] < item ){
+			
+			beg = mid + 1;
 			
 		}
 		else{
 			
-			end = midIndex - 1;
+			end = mid - 1;
 			
 		}
+		
 	}
-	// if none of ours conditon been execute in while loop we'll return -1
 	return -1;
 }
+
 
 int main(void){
 	
@@ -35,10 +35,10 @@ int main(void){
 	int size = (sizeof(arr) / sizeof(int));
 	
 	printf("The total number of elements are %i\n", size - 1);
-	
+		
 	int item = 99;
 	
-	int ans = BinarySearch(arr, item, 0, size); // 0 means beg of index	
+	int ans = binarysearch(arr, item, 0, size); // 0 means beg of index	
 	
 	if ( ans == -1 ){
 		
