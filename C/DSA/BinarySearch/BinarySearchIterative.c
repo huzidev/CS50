@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <cs50.c>
 
 int binarysearch(int arr[], int item, int beg, int end){
 	
@@ -35,8 +36,10 @@ int main(void){
 	int size = (sizeof(arr) / sizeof(int));
 	
 	printf("The total number of elements are %i\n", size - 1);
-		
-	int item = 99;
+	
+	printf("List of arrays : 10, 25, 35, 40, 55, 65, 79, 99, 100\n");
+	
+	int item = get_int("Which element you wanna search : ");
 	
 	int ans = binarysearch(arr, item, 0, size); // 0 means beg of index	
 	

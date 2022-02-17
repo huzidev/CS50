@@ -11,8 +11,7 @@ int linearSearch(int arr[], int TargetElement, int size){
 			
 		}
 	}	
-	return -1; // if tagret element isn't found
-	
+	return -1; // if tagret element isn't found	
 }
 
 
@@ -41,7 +40,6 @@ int main(void){
 		printf("Element is found at index numebr %dth of array \n", ans);
 		
 	}
-	
 	return 0;
 }
 	
