@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <cs50.c>
 void selectionSort(int arr[], int size){
 	
 	for(int j = 0; j < size - 1; j++){ // size - 1 is becasuse we'll have j and j+1 for swapping by comparision now when we came to all over the end the last element the j will be their but J+1 will points toward NULL therefore iterate till size - 1
@@ -36,21 +36,37 @@ void printArray(int arr[], int size){
 
 int main(void){
 	
-	int arr[] = {10, 6, 5, 4, 1, 2};
+	int n = get_int("How many elements you wanna sort: ");
 	
-	int size = (sizeof(arr) / sizeof(int));
+	int arr[n];
 	
-	printf("the total elements are %i\n", size - 1);
+	for(int i = 0; i < n; i++){
+		
+		arr[i] = get_int("value : ");
+		
+	}
 	
-	printf("Before sorting the array: ");
+	if( n == NULL){
+		
+		printf("\nYou didn't insert appropriate value");
+		
+	}
+	else{
+		
+		int size = (sizeof(arr) / sizeof(int));
 	
-	printArray(arr, size);
+		printf("\n Total elements are %i int the given array \n", size - 1);
 	
-	printf("\nAfter sorting the array: ");	
+		printf("\nBefore sorting the array: ");
 	
-	selectionSort(arr, size);
+		printArray(arr, size);
 	
-	printArray(arr, size);
+		printf("\nAfter sorting the array: ");	
 	
+		selectionSort(arr, size);
+	
+		printArray(arr, size);
+	
+	}
 	return 0;
 }
