@@ -1,15 +1,32 @@
 #include <stdio.h>
+#include <cs50.c>
 
-int main(Void){
+void print(int array[], int n){
 	
-	int array[] = {1, 5, 6, 7, 8, 9};
-	
-	int size = (sizeof(array) / sizeof(int));
-	printf("the total elements are %i\n", (size-1)); //size - 1 is because indexified starts from zero
-	
-	for(int i = 0; i < size; i++){ // if we says i < 10 then after printing the elements which are present but we've say i < 10 then it'll print garbage value for us
+	for(int i = 0; i < n; i++ ){
 		
 		printf("%d ", array[i]);
 		
 	}
+	printf("\n");
+}
+
+int main(Void){
+	int n = get_int("How many elements you wanna insert\n");
+	
+	int array[n]; // acc to size of ours element ours array will be of that size
+	
+	for(int i = 0; i < n; i++){ 
+	
+		array[i] = get_int("value: ");
+			
+	}
+	
+	int size = (sizeof(array) / sizeof(int));
+	
+	printf("the total elements are %i\n", (size-1));
+	
+	print(array, n);
+	
+	return 0;
 }
