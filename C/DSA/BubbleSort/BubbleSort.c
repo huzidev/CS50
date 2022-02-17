@@ -35,7 +35,7 @@ int main(void){
 	
 //	int arr[] = {25, 20, 6, 98, 3, 4, 1, 0, 54, 36, 4, 2};
 
-	int n = get_int("How many elements you wana sort?");
+	int n = get_int("How many elements you wana sort? ");
 	
 	int arr[n];
 	
