@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <cs50.c>
 
 // i is for left, j is for right and k is for new array in which all the sorted array will be insert
 
@@ -30,7 +31,7 @@ void merge(int arr[], int beg, int mid, int end){
 	
 	k = beg; // bcz all the sorted elements will be in that array therefore BEG
 	
-	while( i < len1 && j < len2){
+	while( i < len1 && j < len2 ){
 		
 		if( LeftArr[i] < RightArr[j]){
 			
@@ -54,7 +55,7 @@ void merge(int arr[], int beg, int mid, int end){
 		k++;
 		
 	}
-	while( j < len2){
+	while( j < len2 ){
 		
 		arr[k] = RightArr[j];
 		j++;
@@ -89,21 +90,44 @@ void Print(int arr[], int size){
 
 int main(void){
 	
-	int arr[] = {4, 6, 9, 21, 36, 1, 0, 48, 34, 321};
+	do{
+		int n = get_int("How many elements you wanna sort? ");
 	
-	int size = (sizeof(arr) / sizeof(int));
+		int arr[n];
+		
+		if( n == NULL ){
+			
+			printf("You didn't insert an appropriate value!\n");
+			
+		}
+		else{
+			
+			for( int i = 0; i < n; i++){
+				
+				arr[i] = get_int("Value : ");
+				
+			}
+			
+			int size = (sizeof(arr) / sizeof(int));
+			
+			printf("Total elements are %i\n", size-1);
+			
+			printf("Before Sorting: ");
+			
+			Print(arr, size);
+			
+			printf("\nAfter Sorting: ");
+			
+			MergeSort(arr, 0, size-1); // for last index size - 1
+			
+			Print(arr, size);	
+		
+		}
+		
+		printf("Do you wanna conitnue?\n");
+		
+	}
 	
-	printf("Total elements are %i\n", size-1);
-	
-	printf("Before Sorting: ");
-	
-	Print(arr, size);
-	
-	printf("\nAfter Sorting: ");
-	
-	MergeSort(arr, 0, size-1); // for last index size - 1
-	
-	Print(arr, size);	
-	
+	while('y' == getch());
 	return 0;
 }
