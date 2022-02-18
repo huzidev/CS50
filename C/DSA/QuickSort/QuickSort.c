@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <cs50.c>
 
 void SwapElements(int *first, int *second){
 	
@@ -17,7 +18,7 @@ int Partition(int arr[], int beg, int end){
 	
 	for( int i = beg; i < end; i++){ // why we said < end is because the last one is ours PIVOT 
 		
-		if ( arr[i] > pivot ){ // 14, 17, 8, 90, 11, 2 there 2 is ours PIVOT
+		if ( arr[i] < pivot ){ // 14, 17, 8, 90, 11, 2 there 2 is ours PIVOT
 			
 			pIndex++; // coz it is at -1 index
 
@@ -57,22 +58,45 @@ void Print(int arr[], int size){
 }
 
 int main(void){
+	do{
+		int n = get_int("How many elements you wanna sort? ");
+		
+		int arr[n];
+		
+		if( n == NULL ){
+			
+			printf("You didn't insert an appropriate value!\n");
+			
+		}
+		
+		else{
+			
+			for(int i = 0; i < n; i++){
+				
+				arr[i] = get_int("Value : ");
+				
+			}
+			
+			int size = (sizeof(arr) / sizeof(int));
+			
+			printf("Total number of elements are %i\n", size - 1);
+			
+			printf("Before sorting: ");
+			
+			Print(arr, size);
+			
+			printf("\nAfter sorting: ");
+			
+			QuickSort(arr, 0, size-1);
+			
+			Print(arr, size);
+		
+		}
+		
+		printf("Do you wanna continue?\n");
+	}
 	
-	int arr[] = {14, 17, 8, 90, 11, 2};
-	
-	int size = (sizeof(arr) / sizeof(int));
-	
-	printf("Total number of elements are %i\n", size - 1);
-	
-	printf("Before sorting: ");
-	
-	Print(arr, size);
-	
-	printf("\nAfter sorting: ");
-	
-	QuickSort(arr, 0, size-1);
-	
-	Print(arr, size);
+	while('y' ==  getch());
 	
 	return 0;
 }
