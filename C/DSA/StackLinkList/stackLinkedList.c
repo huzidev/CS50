@@ -126,7 +126,7 @@ int main(void){
 		}
 		printf("\n do you wanna continue");
 	}
-		while('y' == getch());
-		return 0;
+	while('y' == getch());
+	return 0;
 }
 

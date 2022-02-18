@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <cs50.c>
 // like playing card first card will be sorted coz we've just one card and that will be sorted
 
 void print( int arr[], int size){
@@ -7,6 +7,7 @@ void print( int arr[], int size){
 	for( int i = 0; i < size; i++){
 		
 		printf("%d ", arr[i]);
+		
 	}
 	printf("\n");
 }
@@ -31,22 +32,43 @@ void InsertionSort( int arr[], int size){
 
 
 int main(void){
+	do{
+		int n = get_int("How many elements you wanna sort? ");
+		
+		int arr[n];
+		
+		for(int i = 0; i < n; i++){
+			
+			arr[i] = get_int("Value : ");
+			
+		}
+		
+		if( n == NULL){
+			
+			printf("You didn't insert an appropraite value \n");
+		}
+		
+		else{
+		
+			int size = (sizeof(arr) / sizeof(int));
+		
+			printf("The total elements are %i", size - 1);
 	
-	int arr[] = {10, 5, 6, 20};	
+			printf("\nElements before sortation: ");
+		
+			print(arr, size);
+		
+			printf("Elements after sortation: ");
+		
+			InsertionSort(arr, size);
+		
+			print(arr, size);
+		}
+		
+		printf("Do you wanna continue?\n");
+	}
 	
-	int size = (sizeof(arr) / sizeof(int));
-	
-	printf("The total elements are %i", size - 1);
-
-	printf("\nElements before sortation: ");
-	
-	print(arr, size);
-	
-	printf("Elements after sortation: ");
-	
-	InsertionSort(arr, size);
-	
-	print(arr, size);
+	while('y' == getch());
 	
 	return 0;
 }

@@ -36,37 +36,45 @@ void printArray(int arr[], int size){
 
 int main(void){
 	
-	int n = get_int("How many elements you wanna sort: ");
-	
-	int arr[n];
-	
-	for(int i = 0; i < n; i++){
+	do{
+		int n = get_int("How many elements you wanna sort: ");
 		
-		arr[i] = get_int("value : ");
+		int arr[n];
+		
+		for(int i = 0; i < n; i++){
+			
+			arr[i] = get_int("value : ");
+			
+		}
+		
+		if( n == NULL ){
+			
+			printf("You didn't insert appropriate value\n");
+			
+		}
+		else{
+			
+			int size = (sizeof(arr) / sizeof(int));
+		
+			printf("\n Total elements are %i int the given array \n", size - 1);
+		
+			printf("\nBefore sorting the array: ");
+		
+			printArray(arr, size);
+		
+			printf("\nAfter sorting the array: ");	
+		
+			selectionSort(arr, size);
+		
+			printArray(arr, size);
+			
+		}
+		
+		printf("Do you wanna continue?\n");
 		
 	}
 	
-	if( n == NULL ){
-		
-		printf("\nYou didn't insert appropriate value");
-		
-	}
-	else{
-		
-		int size = (sizeof(arr) / sizeof(int));
+	while('y' == getch());
 	
-		printf("\n Total elements are %i int the given array \n", size - 1);
-	
-		printf("\nBefore sorting the array: ");
-	
-		printArray(arr, size);
-	
-		printf("\nAfter sorting the array: ");	
-	
-		selectionSort(arr, size);
-	
-		printArray(arr, size);
-	
-	}
 	return 0;
 }

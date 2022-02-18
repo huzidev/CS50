@@ -33,37 +33,43 @@ void PrintArray(int arr[], int size){
 int main(void){
 	
 //	int arr[] = {25, 20, 6, 98, 3, 4, 1, 0, 54, 36, 4, 2};
-
-	int n = get_int("How many elements you wana sort? ");
 	
-	int arr[n];
-	
-	if ( n == NULL ){
+	do{
+		int n = get_int("How many elements you wana sort? ");
 		
-		printf("\nYou didn't insert appropriate value");
+		int arr[n];
 		
-	}
-	
-	else{
-		for(int i = 0; i < n; i++){
+		if ( n == NULL ){
 			
-			arr[i] = get_int("Value: ");
-	
+			printf("\nYou didn't insert appropriate value\n");
+			
 		}
 		
-		int size = (sizeof(arr) / sizeof(int));
+		else{
+			for(int i = 0; i < n; i++){
+				
+				arr[i] = get_int("Value: ");
 		
-		printf("The total number of elements are %i\n", size - 1);
-		
-		printf("Before sorting the array: ");
-		
-		PrintArray(arr, size);
-		
-		printf("\nAfter Sorting the array with Bubble Sort: ");
-		
-		BubbleSort(arr, size);
-		
-		PrintArray(arr, size);
+			}
+			
+			int size = (sizeof(arr) / sizeof(int));
+			
+			printf("The total number of elements are %i\n", size - 1);
+			
+			printf("Before sorting the array: ");
+			
+			PrintArray(arr, size);
+			
+			printf("\nAfter Sorting the array with Bubble Sort: ");
+			
+			BubbleSort(arr, size);
+			
+			PrintArray(arr, size);
+		}
+		printf("Do you wanna continue?\n");
 	}
+	
+	while('y' == getch());
+	
 	return 0;
 }
