@@ -20,7 +20,7 @@ void InsertionSort( int arr[], int size){
 		
 		int j = i - 1; 
 		
-		while( j >= 0 && tmp < arr[j]){
+		while( j >= 0 && tmp < arr[j]){ // for descending order just change the sign
 			
 			arr[ j + 1 ] = arr[j];
 			
