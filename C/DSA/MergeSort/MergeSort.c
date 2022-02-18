@@ -129,5 +129,6 @@ int main(void){
 	}
 	
 	while('y' == getch());
+	
 	return 0;
 }
