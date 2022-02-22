@@ -24,4 +24,6 @@ int main(void){
 	var1.ptr = &var2;
 	
 	printf("%d %c", var1.ptr->i, var1.ptr->c);
+	
+	return 0;
 }
