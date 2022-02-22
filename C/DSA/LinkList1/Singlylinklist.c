@@ -2,7 +2,7 @@
 #include <cs50.c>
 
 struct node{
-	
+
 	int data;
 	struct node *next;
 	
@@ -11,8 +11,8 @@ struct node{
 // always remeber HEAD node always points towards the first NODE
 
 int main(void){
-	int data;
 	
+	int data;
 	// first node
 	struct node *head = NULL;
 	head = (struct node*)malloc(sizeof(struct node));
@@ -26,7 +26,7 @@ int main(void){
 	current1 = (struct node*)malloc(sizeof(struct node));
 	
 	// info for FIRST NODE
-	data = get_int("element 1: ");	
+	data = get_int("element 1: ");
 	head->data = data;
 	head->next = NULL;	
 	
@@ -42,7 +42,6 @@ int main(void){
 	current1->next = NULL;
 	current->next = current1;
 	
-	
 	struct node *ptr = NULL;
 
 	ptr = head; // the address of head is pointing toward first node so we assigned the same address to ours PTR and that ptr will iterate till ptr == NULL
@@ -51,10 +50,8 @@ int main(void){
 	while(ptr != NULL){
 		
 		printf("%d ", ptr->data);
-		
 		ptr = ptr->next;
 		
 	}
-	
 	return 0;
 }
