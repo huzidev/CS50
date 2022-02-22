@@ -8,11 +8,11 @@
 int main(void)
 {
     int n = 50;
-    int *p = &n; // Ampersand(&) means the value whoms location (address) we wanted to know
+    void *p = &n; // Ampersand(&) means the value whoms location (address) we wanted to know
     // printf("%p\n", &n); // just shows us address
     // The method at below will shows us location address and value as well
-    printf("%p\n", p); // for address
-    printf("%i\n", *p); // we uses (%i) becasue we assigned it int at above
+    
+    printf("%d\n", *(int*)p); // we uses (%i) becasue we assigned it int at above
     return 0;
 }
 
