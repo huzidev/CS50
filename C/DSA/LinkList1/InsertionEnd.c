@@ -9,7 +9,6 @@ struct node{
 };
 
 int main(void){
-	int data;
 	
 	struct node *head = NULL;
 	head = (struct node*)malloc(sizeof(struct node));
@@ -17,19 +16,17 @@ int main(void){
 	struct node *current = NULL;
 	current = (struct node*)malloc(sizeof(struct node));
 	
-	data = get_int("element1: ");
-	head->data = data;
+	head->data = 10;
 	head->next = NULL;
 	
-	data = get_int("element2: ");
-	current->data = data;
+	current->data = 20;
 	current->next = NULL;
 	head->next = current;
 	
 	struct node *ptr = NULL;
 	ptr = head;
 	
-	head = add_at_end(head, 50);
+	head = add_at_end(head);
 	
 	while(ptr != NULL){
 		
@@ -41,14 +38,14 @@ int main(void){
 }
 
 
-void add_at_end(struct node *head, int data){
+void add_at_end(struct node *head){
 	
 	struct node *ptr, *temp;
 	
 	ptr = head;
 	
 	temp = (struct node*)malloc(sizeof(struct node));
-	data = get_int("Element you wanna insert in the end? ");
+	int data = get_int("Element you wanna insert in the end? ");
 	temp->data = data;
 	temp->next = NULL;
 	
