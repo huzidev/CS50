@@ -17,7 +17,7 @@ int main(void){
 	
 	if( n > 5 ){
 		
-		printf("you can insert more than 5");
+		printf("you can't insert more than 5");
 		
 	}
 	else{
@@ -30,7 +30,7 @@ int main(void){
 		
 		free = n; // n is empty slot and free and n will be equal but free will update values
 		
-		free = add_at_end(array, free, result); // 
+		free = add_at_end(array, free, result);
 		
 		for(int i = 0; i < free; i++){ // i < free the updated element will also take an index therefore a plus of index
 			
@@ -42,17 +42,17 @@ int main(void){
 	return 0;
 }
 
-int add_at_end(int a[], int free, int result){
+int add_at_end(int array[], int free, int result){
 	
 	if( result != NULL ){
 		
 		int data = get_int("element you wanna insert at end");
 		
-		a[free] = data;
+		array[free] = data;
 		
 		free++; // so free will increment an index and it is compulsory otherwise the last element would not print
-		
 	}
+
 	else{
 		printf("you've already exceeds the limit\n ");
 	}
