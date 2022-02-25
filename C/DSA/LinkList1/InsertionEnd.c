@@ -22,7 +22,7 @@ int main(void){
 	current->data = 20;
 	current->next = NULL;
 	head->next = current;
-	
+		
 	struct node *ptr = NULL;
 	ptr = head;
 	
