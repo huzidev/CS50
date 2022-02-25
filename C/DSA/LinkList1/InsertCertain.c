@@ -56,19 +56,29 @@ int main(void){
 	data = 90;
 	
 	int pos = get_int("at which position you wanna insert the certain element\n");
-		
-	add_at_pos(head, data, pos);
 	
-	struct node *ptr = NULL;
-	
-	ptr = head;
-	
-	while(ptr != NULL){
+	if( pos > 4 || pos <= 1 ){
 		
-		printf("%d ", ptr->data);
-		ptr = ptr->next;
+		printf("you've to select a position between 1 to 4");
 		
+	}	
+	else{
+		
+		add_at_pos(head, data, pos);
+		
+		struct node *ptr = NULL;
+		
+		ptr = head;
+		
+		while(ptr != NULL){
+			
+			printf("%d ", ptr->data);
+			ptr = ptr->next;
+			
+		}
 	}
+	
+	return 0;
 }
 
 
@@ -97,6 +107,7 @@ void add_at_pos(struct node *head, int data, int pos){
 		pos--;
 		
 	}
+	
 	ptr2->next = ptr->next;
 	ptr->next = ptr2;
 }
