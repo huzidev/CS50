@@ -50,7 +50,7 @@ int main(void){
 	
 	first->next = sec;
 	
-	del_beg(&head);
+	delete_last(&head);
 	
 	struct node *ptr = NULL;
 	
@@ -66,17 +66,35 @@ int main(void){
 	return 0;
 }
 
-
-void del_beg(struct node **head){ // therefore we've used ** asterisk sign here
+void delete_last(struct node **head){
 	
-	struct node *temp = NULL;
+	if ( *head == NULL ){
 		
-	temp = *head;
+		printf("list is empty");
 		
-	*head = temp->next; // so we'll create new node as first node
+}
+	
+	else{
 		
-	free(temp); // this step delete ours node
+		struct node *temp = NULL;
+		struct node *temp1 = NULL;
 		
-	temp = NULL; // this step is mandatory because after deleting ours node temp will still stores the address of that node therefore we've to assigned to to NULL
+		temp = *head; // one pointer will points toward the node that have to be deleted and other pointer will be just before the pointer that have to be deleted so we can update the NEXT part of that node
+		temp1 = *head;
+		
+		while( temp->next != NULL ){
+		
+			temp1 = temp;
+			temp = temp->next;
+			
+		}
+		
+		temp1->next = NULL;
+		free(temp);
+		temp = NULL;
+	}
+	return head;
+	
 	
 }
+
