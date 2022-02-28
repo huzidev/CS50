@@ -1,36 +1,38 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
+#include <cs50.c>
+
 
 struct node{
 	
 	int data;
 	
 	struct node *next;
-}*p, *tmp, *tmp1;
+	
+}*head, *tmp, *tmp1;
 
 
 // PROTOTYPES
-void insert_end(int);
+void insert_end(int data);
 void delete_beg();
 void display();
 void isEmpty();
 
 
 
-void insert_end(int ele){
+void insert_end(int data){
 	
-	tmp = p;
 	
 	tmp1 = (struct node*)malloc(sizeof(struct node));
 	
-	tmp1->data = ele;
+	tmp1->data = data;
 	
 	tmp1->next = NULL;
 	
-	if( p == NULL ){
+	if( head == NULL ){
 		
-		p = tmp1;
+		head = tmp1;
 	
 	}
 	
@@ -42,12 +44,15 @@ void insert_end(int ele){
 		}
 		tmp->next = tmp1;
 	} 
+	
+	tmp = head;
+	
 }
 
 
 void isEmpty(){
 	
-	if( p == NULL ){
+	if( head == NULL ){
 		
 		printf("\n Queue is empty");
 		
@@ -62,25 +67,25 @@ void isEmpty(){
 
 void delete_beg(){
 	
-	tmp = p; 
+	tmp = head; 
 	
-	if( p == NULL){
+	if( head == NULL){
 		
 		printf("\n no elements can be delete");
 		
 	}
 	else{
 		
-		printf("\n element delete - %d", p->data);
-		p = p->next;
+		printf("\n element delete - %d", head->data);
+		head = head->next;
 		
 	}
 }
 
 void display(){
 	
-	tmp = p;
-	if( p == NULL){
+	tmp = head;
+	if( head == NULL){
 		printf("empty array!");
 	}
 	else{
@@ -95,7 +100,6 @@ void display(){
 int main(void){
 	
 	int val, n;
-	p = NULL;
 	
 	do{
 		printf("\n********** MENU **********");
@@ -105,13 +109,13 @@ int main(void){
 		printf("\n4.DISPLAY");
 		printf("\n5.EXIT");
 		printf("\n enter yours choice : ");
-		scanf("%d", &n);
+		n = get_int("");
 		
 		switch(n){
 			
 			case 1:
 				printf("\n enter value : ");
-				scanf("%d", &val);
+				val = get_int("");
 				insert_end(val);
 				break;
 			

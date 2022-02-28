@@ -9,7 +9,7 @@ struct node{
 	
 	struct node *next;
 	
-}*head, *tmp;
+}*head, *tmp, *tmp1;
 	
 // PROTOTYPES
 void insert(int data);
@@ -20,22 +20,24 @@ void isEmpty();
 
 void insert(int data){
 	
-	tmp = (struct node*)malloc(sizeof(struct node));
+	tmp1 = (struct node*)malloc(sizeof(struct node));
 	
-	tmp->data = data;
+	tmp1->data = data;
 	
 	if( head == NULL ){
 		
-		tmp->next = NULL;
+		tmp1->next = NULL;
 		
 	}
 	else{
 		
-		tmp->next = head; // initially head will be equal to null until we assigned head = tmp;
+		tmp1->next = head; // initially head will be equal to null until we assigned head = tmp;
 		
 	}
 	
-	head = tmp; // so when we created a new node the head part will also update as well with new node
+	head = tmp1; // so when we created a new node the head part will also update as well with new node
+	
+	tmp = head;
 	
 }
 
