@@ -26,10 +26,10 @@ void insert(int data){
 	
 	if( head == NULL ){
 		
-		tmp1->next = NULL;
+		tmp1->next = NULL; // if stack is empty then node's next is NULL 
 		
 	}
-	else{
+	else{ // but when stack is having some node then tmp1->next = head so new inserted node's next part is linked with the old one
 		
 		tmp1->next = head; // initially head will be equal to null until we assigned head = tmp;
 		
