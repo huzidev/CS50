@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
+#include <cs50.c>
 
 struct node{
 	
@@ -8,51 +9,55 @@ struct node{
 	
 	struct node *next;
 	
-}*p, *tmp;
+}*head, *tmp;
 	
 // PROTOTYPES
-void insert(int);
+void insert(int data);
 void ldelete();
 void display();
 void isEmpty();
 
 
-void insert(int ele){
-	
-	tmp = p;
+void insert(int data){
 	
 	tmp = (struct node*)malloc(sizeof(struct node));
 	
-	tmp->data = ele;
+	tmp->data = data;
 	
-	if( p == NULL ){
+	if( head == NULL ){
+		
 		tmp->next = NULL;
+		
 	}
 	else{
-		tmp->next = p;
+		
+		tmp->next = head; // initially head will be equal to null until we assigned head = tmp;
+		
 	}
-	p = tmp;
+	
+	head = tmp; // so when we created a new node the head part will also update as well with new node
+	
 }
 
 void ldelete(){
 	
-	tmp = p;
+	tmp = head; // so tmp and head will points towards the node we wanna delete
 	
-	if( p == NULL ){
+	if( head == NULL ){
 		
 		printf("\n no element to be deleted!");
 		
 	}
 	else{
 		
-		printf("\n element deleted - %d", p->data);
-		p = p->next;
+		printf("\n element deleted - %d", head->data);
+		head = head->next;
 	}
 }
 
 void isEmpty(){
 	
-	if( p == NULL ){
+	if( head == NULL ){
 		
 		printf("\n stack is empty");
 		
@@ -67,17 +72,21 @@ void isEmpty(){
 
 void display(){
 	
-	tmp = p;
+	tmp = head;
 	
-	if( p == NULL ){
+	if( head == NULL ){
 		
-		printf("EMPTY ARRAY! no elements is available");
+		printf("EMPTY STACK! no elements is available");
 		
 	}
 	else{
+		
 		while(tmp != NULL){
+			
 			printf("\n %d", tmp->data);
+			
 			tmp = tmp->next;
+			
 		}
 	}
 }
@@ -85,7 +94,6 @@ void display(){
 int main(void){
 	
 	int val, n;	
-	p = NULL;
 	do{
 		printf("\n********** MENU **********");
 		printf("\n1.PUSH");	
@@ -94,12 +102,12 @@ int main(void){
 		printf("\n4.DISPLAY");
 		printf("\n5.EXIT");
 		printf("\n Enter Yours Choice : ");
-		scanf("%d", &n);
+		n = get_int("");
 		
 		switch(n){
 			case 1:
 				printf("\n Enter the value : ");
-				scanf("%d", &val);
+				val = get_int("");
 				insert(val);
 				break;		
 			
