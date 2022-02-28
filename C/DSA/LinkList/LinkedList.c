@@ -1,76 +1,94 @@
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
-
+#include <cs50.c>
 
 struct node{
 	int data;
 	
 	struct node* next; // *next becasue start (Asterisk) sign is used for pointer and next part of node just works as pointer for next node
-}*p, *tmp, *tmp1;
+}*head, *tmp, *tmp1;
 
 // PROTOTYPES
-void insert_beg(int);
-void insert_end(int);
+void insert_beg(int data);
+void insert_end(int data);
 void delete(int);
 void display();
 
 
-void insert_beg(int ele){
+void insert_beg(int data){
 	
-	tmp = p;
 	tmp1 = (struct node*)malloc(sizeof(struct node));
-	tmp1->data = ele;
-	tmp1->next = p;
-	p = tmp1;
+	
+	tmp1->data = data;
+	
+	tmp1->next = head; // THIS PART IS REALLY IMP BECAUSE WHEN WE WANNA INSERT ANOTHER ELEMENT IN THE BEG WE'VE TO MAKE SURE THAT NEW ELEMENT IN THE BEG HAVE ADDRESS OF OLD NEW NODE
+	
+	head = tmp1;
+	
+	tmp = head;
 	
 }
 
-void insert_end(int ele){
+void insert_end(int data){
 	
-	tmp = p;
 	tmp1 = (struct node*)malloc(sizeof(struct node));
-	tmp1->data = ele;
+	
+	tmp1->data = data;
+	
 	tmp1->next = NULL; //bcz at end there will be NULL after the last node
 	
+	tmp = head;
 	
-	if ( p == NULL ){ // we use if conditon in insert_end becasue what if P is completely empty and user tried to insert value at end	
-		p = tmp1;
+	
+	if ( head == NULL ){ // we use if conditon in insert_end becasue what if P is completely empty and user tried to insert value at end	
+	
+		head = tmp1;
+		
+		tmp = head;
 	}
+	
 	else{
-		while(tmp->next != NULL){ // we didn't wrote tmp->data coz data can be any value even 0 which is NULL value
+		
+		while( tmp->next != NULL ){ // we didn't wrote tmp->data coz data can be any value even 0 which is NULL value
+			
 			tmp = tmp->next;
+		
 		}
+		
 		tmp->next = tmp1;
+	
 	}
 }
 
 
 void delete_beg(){
 	
-	tmp = p;
 	
-	if( p == NULL ){
+	if( head == NULL ){
 		printf("\n no element to be deleted!");
 	}
 	else{
-		printf("\n element deleted - %d", p->data); //p->data means the data (value) we deleted
-		p = p->next; // since we delete from beg hence now points towards next node
+		printf("\n element deleted - %d", head->data); //p->data means the data (value) we deleted
+		head = head->next; // since we delete from beg hence now points towards next node
 	}
+	tmp = head; // so the new address of head will be printed in the tmp as well.
 }
 
 void delete_end(){
 	
-	tmp = p;
+	tmp = head; // make sure to assigned this at top in this case delete at end
 	
 	struct node* pre; // in case the last elements next isn't null
 	
-	if( p ==  NULL){
+	if( head ==  NULL){
 		printf("\n no element to be deleted");
 	}
-	else if(p->next == NULL){
-		printf("\n element deleted - %d", p->data);
-		p = NULL; // since we delete from end now points towards NULL
+	else if(head->next == NULL){
+		printf("\n element deleted - %d", head->data);
+		free(head); // once we freed(head) the node will be deleted but head will still have the address therefore we've to assign head = NULL
+		head = NULL; // since we delete from end now points towards NULL
+		
 	}
 	else{
 		while(tmp->next != NULL){
@@ -85,13 +103,14 @@ void delete_end(){
 
 void display(){
 	
-	tmp = p;
+	tmp = head;
 	
-	if( p == NULL ){
+	if( head == NULL ){
 		
 		printf("LIST EMPTY! no element is available to be view\n");
 		
 	}
+	
 	while(tmp != NULL){
 		printf("\n %d", tmp->data);
 		tmp = tmp->next;
@@ -100,7 +119,6 @@ void display(){
 
 int main(void){
 	int val, n;
-	p = NULL;
 	
 	do{
 		printf("\n.********** MENU **********");
@@ -111,19 +129,19 @@ int main(void){
 		printf("\n5. DISPLAY");
 		printf("\n6. EXIT");
 		printf("\n Enter yours chouice : ");
-		scanf("%d", &n);
+		n = get_int("");
 	
 		switch(n){
 			
 			case 1:
 				printf("\n Enter the value : ");
-				scanf("%d", &val);
+				val = get_int("");
 				insert_beg(val);
 				break;
 			
 			case 2:
 				printf("\n Enter the value : ");
-				scanf("%d", &val); 
+				val = get_int(""); 
 				insert_end(val);
 				break;
 				
@@ -140,6 +158,7 @@ int main(void){
 				break;
 				
 			case 6:
+				printf("Exit successfully!");
 				exit(0);
 				break;
 				
