@@ -64,8 +64,7 @@ int main(void){
 	
 	struct node *head = NULL;
 	
-	head = addToEmpty(&head);
-	
+	head = addToEmpty(head);
 	
 	head = AddAtBeg(head);
 	
