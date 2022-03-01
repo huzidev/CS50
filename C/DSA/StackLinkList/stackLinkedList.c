@@ -24,7 +24,7 @@ void insert_beg(int data){ // insertion will always be from beg in stack therefo
 	
 	tmp1->data = data;
 	
-	if( head == NULL ){
+	if( head == NULL ){ // in case if head = NULL tmp1->next or head's next will be NULL coz the new element will always be before it 
 		
 		tmp1->next = NULL; // if stack is empty then node's next is NULL 
 		
