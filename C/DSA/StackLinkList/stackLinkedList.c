@@ -12,13 +12,13 @@ struct node{
 }*head, *tmp, *tmp1;
 	
 // PROTOTYPES
-void insert(int data);
+void insert_beg(int data);
 void ldelete();
 void display();
 void isEmpty();
 
 
-void insert(int data){
+void insert_beg(int data){ // insertion will always be from beg in stack therefore the new node's next part will be HEAD so new node became before head
 	
 	tmp1 = (struct node*)malloc(sizeof(struct node));
 	
@@ -110,7 +110,7 @@ int main(void){
 			case 1:
 				printf("\n Enter the value : ");
 				val = get_int("");
-				insert(val);
+				insert_beg(val);
 				break;		
 			
 			case 2:

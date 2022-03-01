@@ -1,4 +1,4 @@
-#include <stdio.h>
+	#include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
 #include <cs50.c>
@@ -23,6 +23,7 @@ void isEmpty();
 
 void insert_end(int data){
 	
+	tmp = head; // mandatory to assigned it first so tmp would starts from where head is
 	
 	tmp1 = (struct node*)malloc(sizeof(struct node));
 	
@@ -33,7 +34,7 @@ void insert_end(int data){
 	if( head == NULL ){
 		
 		head = tmp1;
-	
+		
 	}
 	
 	else{
@@ -45,7 +46,6 @@ void insert_end(int data){
 		tmp->next = tmp1;
 	} 
 	
-	tmp = head;
 	
 }
 
