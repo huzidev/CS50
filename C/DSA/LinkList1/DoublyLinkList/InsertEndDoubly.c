@@ -66,10 +66,11 @@ int main(void){
 	
 	head = addToEmpty(&head);
 	
-	
 	head = AddAtBeg(head);
+
+	head = AddAtEnd(head);
 	
-	struct node *ptr = NULL;
+	struct node *ptr;
 	
 	ptr = head;
 		

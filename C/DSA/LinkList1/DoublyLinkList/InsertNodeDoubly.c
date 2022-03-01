@@ -40,7 +40,7 @@ int main(void){
 	
 	head = addToEmpty(&head);
 	
-	struct node *ptr;
+	struct node *ptr = NULL;
 	
 	ptr = head;
 		
