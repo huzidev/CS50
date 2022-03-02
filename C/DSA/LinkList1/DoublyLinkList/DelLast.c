@@ -77,7 +77,7 @@ struct node* CreateManual(struct node *head){
 	
 	for(int i = 1; i < n; i++){
 		
-		data = get_int("Which element you wanna insert at %dth node", i+1);
+		data = get_int("Which element you wanna insert at %dth node ", i+1);
 		
 		head = AddAtEnd(head, data);
 		
@@ -86,6 +86,19 @@ struct node* CreateManual(struct node *head){
 	return head;
 }
 
+struct node* DelFirst(struct node *head){
+	
+	tmp = head;
+	
+	head = head->next;
+	
+	free(tmp);
+	
+	tmp = NULL;
+	
+	head->prev = NULL;
+	
+}
 
 int main(void){
 	
@@ -94,6 +107,8 @@ int main(void){
 	head = (struct node*)malloc(sizeof(struct node));
 	
 	head = CreateManual(head);
+	
+	head = DelFirst(head);
 	
 	struct node *ptr = NULL;
 	
