@@ -86,18 +86,29 @@ struct node* CreateManual(struct node *head){
 	return head;
 }
 
-struct node* DelFirst(struct node *head){
+struct node* DelLast(struct node *head){
+	
+	struct node *tmp2 = NULL;
 	
 	tmp = head;
 	
-	head = head->next;
+	tmp2 = tmp;	
+	
+	while( tmp->next != NULL ){
+		
+		tmp = tmp->next;
+		
+	}
+	
+	tmp2 = tmp->prev;
+	
+	tmp2->next = NULL;
 	
 	free(tmp);
 	
 	tmp = NULL;
 	
-	head->prev = NULL;
-	
+	return head;
 }
 
 int main(void){
@@ -108,7 +119,7 @@ int main(void){
 	
 	head = CreateManual(head);
 	
-	head = DelFirst(head);
+	head = DelLast(head);
 	
 	struct node *ptr = NULL;
 	
