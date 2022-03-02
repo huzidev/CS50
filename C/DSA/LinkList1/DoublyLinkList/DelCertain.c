@@ -99,6 +99,90 @@ struct node* DelFirst(struct node *head){
 	head->prev = NULL;
 	
 	return head;
+	
+}
+
+struct node* DelLast(struct node *head){
+	
+	struct node *tmp2 = NULL;
+	
+	tmp = head;
+	
+	tmp2 = tmp;	
+	
+	while( tmp->next != NULL ){
+		
+		tmp = tmp->next;
+		
+	}
+	
+	tmp2 = tmp->prev;
+	
+	tmp2->next = NULL;
+	
+	free(tmp);
+	
+	tmp = NULL;
+	
+	return head;
+}
+
+struct node* DelCertain(struct node *head){
+	
+	tmp = head;
+	
+	int location = get_int("At which position you wanna delete node? ");
+	
+	int pos = location;
+	
+	struct node *tmp2 = NULL;
+	
+	struct node *tmp3 = NULL;
+	
+	if( pos < 1 ){
+		
+		printf("You can't delete element below position 1 ");
+		
+	}
+	
+	if( pos == 1 ){
+		
+		head = DelFirst(head); 
+		
+		return head;
+	}
+	
+	while( pos >= 2 ){
+		
+		tmp = tmp->next;
+		pos--;
+		
+	}
+	
+	if( tmp->next == NULL ){
+		
+		head = DelLast(head);
+		
+	}
+	
+	else{
+		
+		tmp2 = tmp->prev;
+		
+		tmp3 = tmp->next;
+		
+		tmp2->next = tmp3;
+		
+		tmp3->prev = tmp2;
+		
+		free(tmp);
+		
+		tmp = NULL;
+	
+	}
+	
+	return head;
+	
 }
 
 int main(void){
@@ -109,7 +193,7 @@ int main(void){
 	
 	head = CreateManual(head);
 	
-	head = DelFirst(head);
+	head = DelCertain(head);
 	
 	struct node *ptr = NULL;
 	
