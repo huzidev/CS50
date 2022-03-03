@@ -22,23 +22,23 @@ struct node* AddToEmpty(int data){
 	
 	temp1->next = temp1; // so first nodes next part is of same address as of first node it self
 	
-	return temp1; // basically we'll not reutrn tail specifically but temp1 so in main function ours tail will take temp1 
+	return temp1; // basically we'll not reutrn tail specifically but temp1 so in main function ours tail will RECIEVED temp1 
 	
 }
 
 struct node* AddAtBeg(struct node *tail, int data){
 	
-	struct node *newP = NULL;
+	struct node *temp1 = NULL;
 	
-	newP = (struct node*)malloc(sizeof(struct node));
+	temp1 = (struct node*)malloc(sizeof(struct node));
 	
 	data = get_int("Element2 ");
 	
-	newP->data = data;
+	temp1->data = data;
 	
-	newP->next = tail->next; // it is mandatory to use tail->next here instead of tail becuase it'll helps us when we have hundred of nodes
+	temp1->next = tail->next; // it is mandatory to use tail->next here instead of tail becuase it'll helps us when we have hundred of nodes
 	
-	tail->next = newP;
+	tail->next = temp1;
 	
 	return tail;
 }
@@ -50,13 +50,17 @@ void print(struct node *tail){
 	
 	ptr = tail->next;
 	
-	do{
-		
+	do{ // we'll use do while loop specially in circular link list because at beg ptr is equal to tail->next
+// and we know that tail->next stores the address of first ever node therefore ptr will run from first node but 
+// as tail->next address was already at first node therefore we'll update (PTR) form one node so it'll not starts from	
+// specially first node rather starts from second till we reached where tail->next is present aka last node	
 		printf("%d ", ptr->data);
 		
 		ptr = ptr->next;
 		
 	}while( ptr != tail->next);
+
+//do while loops basically runs ours functions first then checks the conditons 
 	
 }
 
