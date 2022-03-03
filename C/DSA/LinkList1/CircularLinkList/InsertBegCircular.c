@@ -32,7 +32,7 @@ struct node* AddAtBeg(struct node *tail, int data){
 	
 	temp1 = (struct node*)malloc(sizeof(struct node));
 	
-	data = get_int("Element2 ");
+	data = get_int("Element for beg? ");
 	
 	temp1->data = data;
 	
@@ -41,6 +41,26 @@ struct node* AddAtBeg(struct node *tail, int data){
 	tail->next = temp1;
 	
 	return tail;
+}
+
+struct node* AddAtEnd(struct node *tail, int data){
+	
+	struct node *temp1 = NULL;
+	
+	temp1 = (struct node*)malloc(sizeof(struct node));
+
+	data = get_int("Element At End ");
+	
+	temp1->data = data;
+	
+	temp1->next = tail->next; // so first nodes next part is of same address as of first node it self
+	
+	tail->next = temp1;
+	
+	tail = tail->next;
+	
+	return tail; // basically we'll not reutrn tail specifically but temp1 so in main function ours tail will RECIEVED temp1 
+	
 }
 
 
@@ -64,6 +84,7 @@ void print(struct node *tail){
 	
 }
 
+
 int main(void){
 	
 	int data;
@@ -73,6 +94,8 @@ int main(void){
 	tail = AddToEmpty(data);
 	
 	tail = AddAtBeg(tail, data);
+	
+	tail = AddAtEnd(tail, data);
 	
 	print(tail);
 	
