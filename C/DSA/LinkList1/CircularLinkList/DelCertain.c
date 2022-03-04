@@ -78,6 +78,27 @@ struct node* CreateList(struct node *tail){
 	
 }
 
+struct node* DelFirst(struct node *tail){
+	
+	struct node *ptr = NULL;
+	
+	struct node *next = NULL;
+	
+	// or we can just simply write tail->next = ptr->next; if we dont wanna make another pointer
+	
+	ptr = tail->next;
+	
+	next = ptr->next;
+	
+	free(ptr);
+	
+	ptr = NULL;
+	
+	tail->next = next;
+
+	return tail;	
+}
+
 struct node* DelLast(struct node *tail){
 	
 	struct node *ptr = NULL;
@@ -114,6 +135,41 @@ struct node* DelLast(struct node *tail){
 	return tail;
 }
 
+struct node* DelCertain(struct node *tail, int pos){
+	
+	struct node *ptr = NULL;
+	
+	struct node *next = NULL;
+	
+	ptr = tail->next;
+	
+	next = ptr;
+	
+	if( pos == 0 ){
+		
+		tail = DelFirst(tail);
+		
+		return tail;
+		
+	}
+	
+	while( pos > 2 ){
+		
+		ptr = ptr->next;
+		
+		pos--;
+	}
+	
+	next = ptr->next;
+	
+	ptr->next = next->next;
+	
+	free(next);
+	
+	next = NULL;
+	
+	return tail;
+}
 
 void print(struct node *tail){
 	
@@ -143,26 +199,29 @@ int main(void){
 	struct node *tail = NULL;
 	
 	tail = CreateList(tail);
-	
-	printf("\nList before deleting first node! : ");
-	
-	print(tail);
-	
-	if( tail == NULL ){
 		
-		printf("No node in the list! ");
+	if(tail == NULL){
+		
+		printf("\nList is empty!");
 		
 	}
 	
-	
 	else{
 		
-		printf("\nList after deleting first node! : ");
+		printf("\nList before deleting the node! : ");
 		
-		tail = DelLast(tail);
-
 		print(tail);
-	}	
-	
+		
+		int location = get_int("\nAt which position you wanna delete the node? ");
+		
+		int pos = location;
+		
+		tail = DelCertain(tail, pos);	
+		
+		printf("\nList After deleting node at position number %d : ", pos);
+		
+		print(tail);
+		
+	}
 	return 0;
 }

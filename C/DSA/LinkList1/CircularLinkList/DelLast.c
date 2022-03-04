@@ -90,7 +90,7 @@ struct node* DelLast(struct node *tail){
 		
 	}
 	
-	if( ptr->next == tail ){ // means there is only one node
+	if( tail->next == tail ){ // means there is only one node
 		
 		free(tail);
 		
