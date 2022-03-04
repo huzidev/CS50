@@ -114,7 +114,7 @@ struct node* count(struct node *tail){
 		ptr = ptr->next;
 
 	}
-	count++;	
+	count++; // this one is mandatory because if we've total of 5 elements the counter will only print 4 becasue it is starting from zero therefore we've to make another counter for one additional count
 	
 	printf("Total nodes in the list are : %d\n", count);	
 	
