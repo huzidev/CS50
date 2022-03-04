@@ -15,8 +15,6 @@ struct node* AddToEmpty(int data){
 	struct node *temp1 = NULL;
 	
 	temp1 = (struct node*)malloc(sizeof(struct node));
-
-	data = get_int("Element1 ");
 	
 	temp1->data = data;
 	
@@ -26,30 +24,11 @@ struct node* AddToEmpty(int data){
 	
 }
 
-struct node* AddAtBeg(struct node *tail, int data){
-	
-	struct node *temp1 = NULL;
-	
-	temp1 = (struct node*)malloc(sizeof(struct node));
-	
-	data = get_int("Element for beg? ");
-	
-	temp1->data = data;
-	
-	temp1->next = tail->next; // it is mandatory to use tail->next here instead of tail becuase it'll helps us when we have hundred of nodes
-	
-	tail->next = temp1;
-	
-	return tail;
-}
-
 struct node* AddAtEnd(struct node *tail, int data){
 	
 	struct node *temp1 = NULL;
 	
 	temp1 = (struct node*)malloc(sizeof(struct node));
-
-	data = get_int("Element At End ");
 	
 	temp1->data = data;
 	
@@ -63,46 +42,58 @@ struct node* AddAtEnd(struct node *tail, int data){
 	
 }
 
-struct node* AddAtPos(struct node *tail, int data, int pos){
+struct node* CreateList(struct node *tail){
 	
-	struct node *tmp1 = NULL;
+	int n;
 	
-	struct node *ptr = NULL;
+	int data;
 	
-	tmp1 = (struct node*)malloc(sizeof(struct node));
+	n = get_int("How many nodes you wanna create? ");
 	
-	ptr = tail->next;
-	
-	data = get_int("Element You wanna insert ");
-	
-	tmp1->data = data;
-	
-	while( pos != 2 ){
+	if( n == 0 ){
 		
-		ptr = ptr->next;
-		
-		pos--;
-		
-	}
-	if( ptr == tail ){
-		
-		tmp1->next = tail->next;
-		
-		tail->next = tmp1;
-		
-		tail = tail->next;
+		return tail;
 		
 	}
 	else{
 		
-		tmp1->next = ptr->next;
+//		printf("Enter the first element : ");
 		
-		ptr->next = tmp1;
+		data = get_int("Element You wanna insert first : ");
 		
+		tail = AddToEmpty(data);
 		
+		for( int i = 1; i < n; i++){
+			
+			data = get_int("element number %d : ", i+1);
+			
+			tail = AddAtEnd(tail, data);
+			
+		}
+		
+		return tail;
 	}
 	
-	return tail;
+}
+
+struct node* DelFirst(struct node *tail){
+	
+	struct node *ptr = NULL;
+	
+	struct node *next = NULL;
+	
+	// or we can just simply write tail->next = ptr->next; if we dont wanna make another pointer
+	
+	ptr = tail->next;
+	
+	next = ptr->next;
+	
+	free(ptr);
+	
+	ptr = NULL;
+	
+	tail->next = next;
+	
 }
 
 
@@ -131,32 +122,13 @@ int main(void){
 	
 	int data;
 	
-	int pos;
-	
 	struct node *tail = NULL;
 	
-	tail = AddToEmpty(data);
+	tail = CreateList(tail);
 	
-	tail = AddAtBeg(tail, data);
+	tail = DelFirst(tail);
 	
-	tail = AddAtEnd(tail, data);
-	
-	int location = get_int("At which position you wanna insert new node? ");
-	
-	pos = location;
-	
-	if(pos < 0){
-		
-		printf("You can't insert positon below 0");
-		
-	}
-	else{
-		
-		tail = AddAtPos(tail, data, pos);
-	
-		print(tail);
-	}
-
+	print(tail);
 	
 	return 0;
 }
