@@ -76,25 +76,34 @@ struct node* CreateList(struct node *tail){
 	
 }
 
-struct node* DelFirst(struct node *tail){
+struct node* DelLast(struct node *tail){
 	
 	struct node *ptr = NULL;
-	
-	struct node *next = NULL;
-	
-	// or we can just simply write tail->next = ptr->next; if we dont wanna make another pointer
-	
-	ptr = tail->next;
-	
-	next = ptr->next;
-	
-	free(ptr);
-	
-	ptr = NULL;
-	
-	tail->next = next;
 
-	return tail;	
+	ptr = tail->next; // so ours ptr will be at first node
+	
+	if( ptr == tail ){ // means there is only one node
+		
+		free(tail);
+		
+		tail = NULL;
+		
+		printf("List is completely empty!");
+	}
+	
+	while( ptr->next != tail ){
+		
+		ptr = ptr->next;
+		
+	}	
+	
+	ptr->next = tail->next; // tail's next stores the address of first node hence after deleting the last node we've to create a new tail
+
+	free(tail);
+	
+	tail = ptr;
+	
+	return tail;
 }
 
 
@@ -133,7 +142,7 @@ int main(void){
 	
 	printf("\nList after deleting first node! : ");
 	
-	tail = DelFirst(tail);
+	tail = DelLast(tail);
 
 	print(tail);
 	
