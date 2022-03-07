@@ -169,17 +169,21 @@ struct node* AddAtPos(struct node *tail, int pos, int location){
 	
 }
 
-struct node* DelFirst(struct node *tail){
+struct node* DelEnd(struct node *tail){
 	
-	struct node *tmp1 = NULL;
+	struct node *tmp = NULL;
 	
-	tmp1 = tail->next;
+	tmp = (struct node*)malloc(sizeof(struct node));
 	
-	free(tmp1);
+	tmp = tail->prev;
 	
-	tail->next = tmp1->next;
+	tmp->next = tail->next;
 	
-	tmp1->next->prev = tmp1->prev;
+	free(tail);
+	
+	tail = NULL;
+	
+	tail = tmp;
 	
 	return tail;
 	
@@ -222,13 +226,13 @@ int main(void){
 	
 	tail = AddAtPos(tail, pos, location);
 	
-	printf("Before deleting the first node : ");
+	printf("Before deleting the last node : ");
 	
 	print(tail);
 	
-	tail = DelFirst(tail);
+	tail = DelEnd(tail);
 	
-	printf("\nAfter deleting the first node : ");
+	printf("\nAfter deleting the last node : ");
 	
 	print(tail);
 	
