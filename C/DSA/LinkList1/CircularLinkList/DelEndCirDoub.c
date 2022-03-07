@@ -177,6 +177,20 @@ struct node* DelEnd(struct node *tail){
 	
 	tmp = tail->prev;
 	
+	if( tail == NULL ){
+		
+		return tail;
+		
+	}
+	
+	if( tmp == tail ){
+		
+		free(tail);
+		tail = NULL;
+		return tail;
+		
+	}
+	
 	tmp->next = tail->next;
 	
 	free(tail);
