@@ -77,7 +77,23 @@ struct node* CreateManual(struct node *head){
 	
 	for(int i = 1; i < n; i++){
 		
-		data = get_int("Which element you wanna insert at %dth node", i+1);
+		if( i == 1 ){
+		
+			data = get_int("Which element you wanna insert node %dnd node? ", i+1);
+		
+		}
+		
+		if( i == 2 ){
+		
+			data = get_int("Which element you wanna insert node %drd node? ", i+1);
+		
+		}
+				
+		if( i >= 3 ){
+		
+			data = get_int("Which element you wanna insert node %dth node? ", i+1);
+		
+		}
 		
 		head = AddAtEnd(head, data);
 		
