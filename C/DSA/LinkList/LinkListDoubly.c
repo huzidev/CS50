@@ -30,9 +30,6 @@ void insert_beg(int data){
 		
 		tmp1->next = head; // THIS PART IS REALLY IMP BECAUSE WHEN WE WANNA INSERT ANOTHER ELEMENT IN THE BEG WE'VE TO MAKE SURE THAT NEW ELEMENT IN THE BEG HAVE ADDRESS OF OLD NEW NODE
 		
-//		head = tmp1;
-		
-//		tmp = head;
 		
 	}
 	
@@ -42,7 +39,6 @@ void insert_beg(int data){
 		
 		head->prev = tmp1;
 		
-//		head = tmp1;
 		
 	}
 	
