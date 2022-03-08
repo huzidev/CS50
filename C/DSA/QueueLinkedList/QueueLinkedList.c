@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <conio.h>
 #include <cs50.c>
 
 
@@ -15,15 +13,15 @@ struct node{
 
 // PROTOTYPES
 void insert_end(int data);
-void delete_beg();
 void display();
+void del();
 void isEmpty();
 
 
 
 void insert_end(int data){
 	
-	tmp = head; // mandatory to assigned it first so tmp would starts from where head is
+	struct node *tmp1 = NULL;
 	
 	tmp1 = (struct node*)malloc(sizeof(struct node));
 	
@@ -31,21 +29,19 @@ void insert_end(int data){
 	
 	tmp1->next = NULL;
 	
-	if( head == NULL ){
+	if( head == NULL ){	
 		
 		head = tmp1;
 		
+		tmp = head;
 	}
-	
 	else{
-		while( tmp->next != NULL){
-			
-			tmp = tmp->next;
-			
-		}
-		tmp->next = tmp1;
-	} 
 	
+		tmp->next = tmp1;
+		
+		tmp = tmp1;
+		
+	}
 	
 }
 
@@ -65,7 +61,7 @@ void isEmpty(){
 	
 }
 
-void delete_beg(){
+void del(){
 	
 	tmp = head; 
 	
@@ -120,7 +116,7 @@ int main(void){
 				break;
 			
 			case 2:
-				delete_beg();
+				del();
 				break;
 				
 			case 3:

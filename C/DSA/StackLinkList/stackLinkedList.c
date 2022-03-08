@@ -52,6 +52,9 @@ void del(){
 		
 		printf("\n element deleted - %d", head->data);
 		head = head->next;
+		free(tmp);
+		tmp = NULL;
+		tmp = head;
 	}
 }
 
