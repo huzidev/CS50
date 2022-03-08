@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <conio.h>
-#include <stdlib.h>
 #include <cs50.c>
 
 struct node{
@@ -13,7 +11,7 @@ struct node{
 	
 // PROTOTYPES
 void insert_beg(int data);
-void ldelete();
+void del();
 void display();
 void isEmpty();
 
@@ -41,7 +39,7 @@ void insert_beg(int data){ // insertion will always be from beg in stack therefo
 	
 }
 
-void ldelete(){
+void del(){
 	
 	tmp = head; // so tmp and head will points towards the node we wanna delete
 	
@@ -114,7 +112,7 @@ int main(void){
 				break;		
 			
 			case 2:
-				ldelete();
+				del();
 				break;
 				
 			case 3:
