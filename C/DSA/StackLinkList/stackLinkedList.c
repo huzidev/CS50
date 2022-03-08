@@ -127,6 +127,7 @@ int main(void){
 				break;
 			
 			case 5:
+				printf("Exit successfully!");
 				exit(0);
 				break;
 				

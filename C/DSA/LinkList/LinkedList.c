@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <conio.h>
-#include <stdlib.h>
 #include <cs50.c>
 
 struct node{
@@ -32,33 +30,28 @@ void insert_beg(int data){
 
 void insert_end(int data){
 	
+	struct node *tmp1 = NULL;
+	
 	tmp1 = (struct node*)malloc(sizeof(struct node));
 	
 	tmp1->data = data;
 	
-	tmp1->next = NULL; //bcz at end there will be NULL after the last node
+	tmp1->next = NULL;
 	
-	tmp = head;
-	
-	
-	if ( head == NULL ){ // we use if conditon in insert_end becasue what if P is completely empty and user tried to insert value at end	
-	
+	if( head == NULL ){	
+		
 		head = tmp1;
 		
 		tmp = head;
 	}
-	
 	else{
-		
-		while( tmp->next != NULL ){ // we didn't wrote tmp->data coz data can be any value even 0 which is NULL value
-			
-			tmp = tmp->next;
-		
-		}
-		
-		tmp->next = tmp1;
 	
+		tmp->next = tmp1;
+		
+		tmp = tmp1;
+		
 	}
+	
 }
 
 
