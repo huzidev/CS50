@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <conio.h>
 #include <cs50.c>
 struct stack{
 	int top;
@@ -19,7 +17,7 @@ struct stack* create(unsigned size){
 	
 	stack->size = size;
 	
-	stack->top = -1; //because index starts from 0 -1 means empty
+	stack->top = -1; //because index starts from 0, -1 means empty
 	
 	stack->array = (int*)malloc( stack->size * sizeof(int)); // because we've to specify the size in case of array
 	
@@ -72,8 +70,11 @@ int peek(struct stack* stack){
 
 
 int main(void){
+	
 	int val, n;
+	
 	struct stack* stack = create(100);
+	
 	do{
 		printf("\n********** MENU **********");
 		printf("\n1.PUSH");
@@ -105,6 +106,7 @@ int main(void){
 				break;
 				
 			case 5:
+				printf("Exit successfully!");
 				exit(0);
 				break;
 				
