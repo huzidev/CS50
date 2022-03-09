@@ -29,12 +29,13 @@ void push(int data){ // int data will receive the value we'll insert in main fun
 
 void print(){
 	
-	for( int i = 0; i < MAX; i++){
+	for( int i = top; i >= 0; i--){
+		
+		printf("\n");
 		
 		printf("%d ", stack_arr[i]);
 		
 	}
-	
 }
 
 int main(void){
