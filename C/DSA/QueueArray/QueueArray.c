@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <conio.h>
+#include <cs50.c>
 #include <stdlib.h>
 
 struct que{
@@ -12,15 +12,17 @@ struct que{
 
 struct que* createque(unsigned actualSize){
 	
-	struct que* que = (struct que*)malloc(sizeof(struct que));
+	struct que *que = (struct que*)malloc(sizeof(struct que));
 	
-	que->actualSize = actualSize;
+	que->actualSize = actualSize; // will receive the size form ours main functions
 	
 	que->size = 0; // index
 	
-	que->front = que->rear = -1; // means if front and rear are equal to -1 means array is empty
+	que->front = -1; // means if front and rear are equal to -1 means array is empty
 	
-	que->arr = (int*)malloc( que->actualSize * sizeof(int));
+	que->rear = -1;
+	
+	que->arr = (int*)malloc( que->actualSize * sizeof(int)); // for dynamic allocation of memory
 	
 	return que;
 }
@@ -29,7 +31,7 @@ struct que* createque(unsigned actualSize){
 
 int isFull(struct que* que){
 	
-	if( que->rear == que->actualSize){
+	if( que->rear == que->actualSize ){
 		
 		printf("Queue Is Full!");
 		
@@ -45,33 +47,9 @@ int isFull(struct que* que){
 	
 }
 
-void enqueue(struct que* que, int item){
-	
-	if(isFull(que)){
-		
-		return; // to overcome overflow
-
-	}
-	
-	que->rear = que->rear + 1; // BEACUSE INSERTION always takes place from rear end
-	
-	que->arr[que->rear] = item; // the item means value we will insert
-	
-	que->size =  que->size + 1; // obviously size will increase but actual size will remains same 
-	
-	if(que->front == -1){
-		
-		que->front++; // coz if -1 means list is EMPTY then assigned the value to frnnt ONLY IF INITIALLY OURS QUE IS EMPTY therefore we wrote == -1
-		
-	}
-	printf("%d enqueued to que\n", item);
-	
-}
-
-
 int isEmpty(struct que* que){
 	
-	if( que->size == NULL ){
+	if( que->size == 0 ){
 		
 		printf("Queue Is Empty!");
 	
@@ -88,6 +66,31 @@ int isEmpty(struct que* que){
 	
 }
 
+void enqueue(struct que* que, int item){
+	
+	if(isFull(que)){
+		
+		return; // to overcome overflow
+
+	}
+	
+	que->rear++; // BEACUSE INSERTION always takes place from rear end
+	
+	que->arr[que->rear] = item; // the item means value we will insert
+	
+	que->size++; // obviously size will increase but actualsize will remains same 
+	
+	if(que->front == -1){
+		
+		que->front++; // coz if -1 means list is EMPTY then assigned the value to frnnt ONLY IF INITIALLY OURS QUE IS EMPTY therefore we wrote == -1
+		
+	}
+	printf("%d enqueued to que\n", item);
+	
+}
+
+
+
 int dequeue(struct que* que){
 	
 	if(isEmpty(que)){
@@ -98,18 +101,20 @@ int dequeue(struct que* que){
 	
 	int item = que->arr[que->front]; // coz deletion will take place from front part
 	
-	if(que->front == que->rear){ // if front is equal to rear means QUE IS empty
-		
-		que->front = que->rear = -1;
+	if(que->front == que->rear){ // if front is equal to rear means QUE IS empty means we've just one element and we delete it now front and rear are poiting at same point therefore we've to force them to go back to -1
+	
+		que->front = -1;
+	
+		que->rear = -1;
 	
 	}	
 	else{
 	
-		que->front++; // coz when element is deleted from FRONT then simply update it by +1
+		que->front++; // coz when element is deleted from FRONT then simply update it by +1 so we can delete the next element also
 		
 	}
 	
-	que->size--;
+	que->size--; // obviusly if we've 3 ele and we deleted an ele so size will be decreased by 1
 	
 	printf("\n %d dequeued", item);
 	
@@ -139,10 +144,11 @@ int rear(struct que* que){
 }
 
 int main(void){
-	
+		
 	int val, n;
+		
 	struct que* que = createque(100);
-	
+		
 	do{
 		printf("\n ********** MENU **********");
 		printf("\n1.ENQUEUE");
@@ -153,16 +159,16 @@ int main(void){
 		printf("\n6.LAST ELEMENT");	
 		printf("\n7.EXIT");
 		printf("\n enter yours choice : ");
-		scanf("%d", &n);	
-		
-		switch(n){
+		n = get_int("");	
 			
+		switch(n){
+				
 			case 1:
 				printf("\n enter the value : ");
-				scanf("%d", &val);
+				val = get_int("");
 				enqueue(que, val);
 				break;
-				
+					
 			case 2:
 				dequeue(que);
 				break;
@@ -170,23 +176,24 @@ int main(void){
 			case 3:
 				printf("\n is FULL : %d", isFull(que));
 				break;
-				
+					
 			case 4:
 				printf("\n is Empty : %d", isEmpty(que));
 				break;
-				
+					
 			case 5:
 				printf("\n Front Element: %d", front(que));
 				break;
-				
+					
 			case 6:
 				printf("\n Rear Element: %d", rear(que));
 				break;
 				
 			case 7 :
+				printf("Exit successfully!");
 				exit(0); 
 				break;
-			
+				
 			default:
 				printf("\n wrong choice!");
 				break;
@@ -194,8 +201,8 @@ int main(void){
 		printf("\n do you wanna continue!");
 	}
 	while('y' == getch());
-	
-	return 0;
+		
+	return 0;		
 }
 
-// since we didn't insert all 100 elements as much size we gave for creating array therefore while checking for isFull it'll shows (0) means true
+	// since we didn't insert all 100 elements as much size we gave for creating array therefore while checking for isFull it'll shows (0) means true
