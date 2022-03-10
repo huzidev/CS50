@@ -3,7 +3,9 @@
 #include <stdlib.h>
 
 struct que{
-	int front, rear, size; // front, rear are basically just poinetrs (BECAUSE) of contigious memory
+	int front, rear; // front, rear are basically just poinetrs (BECAUSE) of contigious memory
+	
+	int size;
 	
 	unsigned actualSize; // the total size of array
 	
@@ -23,32 +25,41 @@ struct que* createque(unsigned actualSize){
 	que->arr = (int*)malloc( que->actualSize * sizeof(int));
 	
 	return que;
-	
-	free(que);
-	free(que->arr);
 }
 
 
 
 int isFull(struct que* que){
 	
-	return ( que->size == que->actualSize); // compare size of que and actualSize of array IF they are equal means que is full
+	if( que->rear == que->actualSize){
+		
+		printf("Queue Is Full!");
+		
+		return 1; // compare size of que and actualSize of array IF they are equal means que is full
+		
+	}
+	else{
+
+		return 0;
+		
+	}
+	
 	
 }
 
 void enqueue(struct que* que, int item){
 	
 	if(isFull(que)){
-
+		
 		return; // to overcome overflow
 
 	}
 	
-	que->rear = que->rear +1; // BEACUSE INSERTION always takes place from rear end
+	que->rear++; // BEACUSE INSERTION always takes place from rear end
 	
 	que->arr[que->rear] = item; // the item means value we will insert
 	
-	que->size = que->size +1; // obviously size will increase but actual size will remains same 
+	que->size++; // obviously size will increase but actual size will remains same 
 	
 	if(que->front == -1){
 		
@@ -62,7 +73,27 @@ void enqueue(struct que* que, int item){
 
 int isEmpty(struct que* que){
 	
-	return (que->size == 0);
+	if( que->front == que->rear ){
+		
+		printf("Queue Is Empty!");
+	
+		return -1;
+		
+	}
+	
+	else if( que->rear == que->actualSize){
+		
+		printf("No, queue is full!");
+		
+		return 1;
+		
+	}
+	
+	else{
+		
+		return 0;
+		
+	}
 	
 }
 
@@ -78,16 +109,16 @@ int dequeue(struct que* que){
 	
 	if(que->front == que->rear){ // if front is equal to rear means QUE IS empty
 		
-		que->front = que->rear = -1;
+		que->front++;
 	
 	}	
 	else{
 	
-		que->front = que->front +1; // coz when element is deleted from FRONT then simply update it by +1
+		que->front++; // coz when element is deleted from FRONT then simply update it by +1
 		
 	}
 	
-	que->size = que->size -1;
+	que->size--;
 	
 	printf("\n %d dequeued", item);
 	
@@ -119,7 +150,7 @@ int rear(struct que* que){
 int main(void){
 	
 	int val, n;
-	struct que* que = createque(100);
+	struct que* que = createque(2);
 	
 	do{
 		printf("\n ********** MENU **********");
@@ -173,7 +204,7 @@ int main(void){
 	}
 	while('y' == getch());
 	
-	
+	return 0;
 }
 
 // since we didn't insert all 100 elements as much size we gave for creating array therefore while checking for isFull it'll shows (0) means true
