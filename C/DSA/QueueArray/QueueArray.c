@@ -3,9 +3,7 @@
 #include <stdlib.h>
 
 struct que{
-	int front, rear; // front, rear are basically just poinetrs (BECAUSE) of contigious memory
-	
-	int size;
+	int front, size, rear; // front, rear are basically just poinetrs (BECAUSE) of contigious memory
 	
 	unsigned actualSize; // the total size of array
 	
@@ -55,11 +53,11 @@ void enqueue(struct que* que, int item){
 
 	}
 	
-	que->rear++; // BEACUSE INSERTION always takes place from rear end
+	que->rear = que->rear + 1; // BEACUSE INSERTION always takes place from rear end
 	
 	que->arr[que->rear] = item; // the item means value we will insert
 	
-	que->size++; // obviously size will increase but actual size will remains same 
+	que->size =  que->size + 1; // obviously size will increase but actual size will remains same 
 	
 	if(que->front == -1){
 		
@@ -73,7 +71,7 @@ void enqueue(struct que* que, int item){
 
 int isEmpty(struct que* que){
 	
-	if( que->front == que->rear ){
+	if( que->size == NULL ){
 		
 		printf("Queue Is Empty!");
 	
@@ -81,13 +79,6 @@ int isEmpty(struct que* que){
 		
 	}
 	
-	else if( que->rear == que->actualSize){
-		
-		printf("No, queue is full!");
-		
-		return 1;
-		
-	}
 	
 	else{
 		
@@ -109,7 +100,7 @@ int dequeue(struct que* que){
 	
 	if(que->front == que->rear){ // if front is equal to rear means QUE IS empty
 		
-		que->front++;
+		que->front = que->rear = -1;
 	
 	}	
 	else{
@@ -150,7 +141,7 @@ int rear(struct que* que){
 int main(void){
 	
 	int val, n;
-	struct que* que = createque(2);
+	struct que* que = createque(100);
 	
 	do{
 		printf("\n ********** MENU **********");
