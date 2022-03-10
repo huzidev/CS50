@@ -8,18 +8,22 @@ struct bt{
 	struct bt *left;
 	
 	struct bt *right;
+	
 };
 
 // dir for direction for left and right
-struct bt* insert(struct bt *q, int val, char dir){
+
+struct bt* insert(struct bt *q, int val, char dir){ //*q so we can use all the functions from struct node with the refrence of (Q)
 	
-	struct bt *tmp;
+	struct bt *tmp = NULL;
 	
 	tmp = (struct bt*)malloc(sizeof(struct bt));
 	
 	tmp->data = val;
 	
-	tmp->left = tmp->right = NULL; // left and right initially to be NULL
+	tmp->left = NULL; // left and right initially to be NULL
+	
+	tmp->right = NULL;
 	
 	if( dir == 'l'){ // if direction is left
 		
