@@ -3,7 +3,8 @@
 
 int binarysearch(int arr[], int item, int beg, int end){
 	
-	while( beg <= end){
+	while( beg <= end ){
+		
 		int mid;
 		
 		mid = beg + ( end - beg ) / 2;
@@ -37,22 +38,50 @@ int main(void){
 	
 	printf("The total number of elements are %i\n", size - 1);
 	
-	printf("List of arrays : 10, 25, 35, 40, 55, 65, 79, 99, 100\n");
+	printf("Which element you wanna search in bw them? : ");
 	
-	int item = get_int("Which element you wanna search : ");
+	for( int i = 0; i < size; i++){
+		
+		printf("%d ", arr[i]);
+		
+	}
+	
+	int item = get_int("\nWhich element you wanna search : ");
 	
 	int ans = binarysearch(arr, item, 0, size); // 0 means beg of index	
 	
-	if ( ans == -1 ){
+	if( ans == -1 ){
 		
-		printf("The element you searched for isn't present in the given array\n");
-		
+		printf(" Element is not present in the given array!");
+
 	}
+
 	else{
 		
-		printf("the element you search for is %dth element of array\n", ans);
+		if( item == arr[1] ){
+			
+			printf("Element is found at index numebr %dst of array \n", ans);
+			
+		}
+		
+		else if( item == arr[2] ){
+			
+			printf("Element is found at index numebr %dnd of array \n", ans);
+			
+		}
+		
+		else if( item == arr[3] ){
+			
+			printf("Element is found at index numebr %drd of array \n", ans);
+			
+		}
+		else{
+		
+			printf("Element is found at index numebr %dth of array \n", ans);
+		
+		}
+		
 		
 	}
-	
 	return 0;
 }
