@@ -60,7 +60,7 @@ void preorder(struct bt *q){ // in (PREORDER) we first print main root then left
 		printf(" %d ", q->data); 
 		
 		preorder(q->left); 
-	
+		
 		preorder(q->right);	
 		
 	}
@@ -93,7 +93,7 @@ int main(void){
 //											2	     6
 //										   / \      /
 //										  1   3     5
-
+	
 	insert(root,2,'l');						
 	insert(root,6,'r');
 	insert(root->left,1,'l');

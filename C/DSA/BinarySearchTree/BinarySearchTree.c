@@ -13,10 +13,11 @@ struct bst{
 };
 
 // INSERT IS BASICALLY A KIND OF FUNCTION USED TO INSERT
-struct bst *insert(struct bst *q, int val){
+struct bst *insert(struct bst *h, int val){
 	
-	struct bst * temp = NULL;
-	if( q == NULL) {
+	struct bst *temp = NULL;
+	
+	if( h == NULL ) {
 		
 		temp = (struct bst*)malloc(sizeof(struct bst));
 	
@@ -26,86 +27,42 @@ struct bst *insert(struct bst *q, int val){
 		
 		temp->right = NULL;
 		
-		q = temp; // to update after every iteration 
+		h = temp; // to update after every iteration 
 	}
 	else{
 		
-		if( val < q->data ){ // means if val we wanna search is smaller then ours main data then move on left side coz it is BST
+		if( val < h->data ){ // means if val we wanna search is smaller then ours main data then move on left side coz it is BST
 			
-			q->left = insert(q->left, val);
+			h->left = insert(h->left, val);
 			
 		}
 		
 		else{
 		
-			q->right = insert(q->right, val);
+			h->right = insert(h->right, val);
 			
 		}
 		
 	}
 	
-	return q; // if non of the conditon is execute then this means ours Binary tree is empty hence return q 
+	return h; // if non of the conditon is execute then this means ours Binary tree is empty hence return q 
 	
 }
 
 // we can make preorder and post order as well
 
-void inorder(struct bst *q){
+void inorder(struct bst *h){
 	
-	if( q == NULL){
-		
-		return; // means if there is no value hence return coz tree is empty
-		
+	if( h != NULL ){
+	
+	inorder(h->left);
+	
+	printf("%d\t ", h->data); // main root AND WE USED \T coz \T will give us plenty of spaces just like a TAB
+	
+	inorder(h->right);
+	
 	}
-	
-	inorder(q->left);
-	
-	printf("%d\t", q->data); // main root AND WE USED \T coz \T will give us plenty of spaces just like a TAB
-	
-	inorder(q->right);
 }
-
-struct bst *search(struct bst *p, int key, struct bst **y){
-
-
-	struct bst *temp;
-		
-		if( p == NULL ) {
-			
-			return(NULL); // return null if it is empty
-			
-		}
-		
-		temp = p; // temp update to p coz now temp will look FOR new elements then we'll update it again then again temp will looks for next element
-		
-		*y = NULL; // to stores ours root as pointer
-		
-		while( temp != NULL){ // measn there is more node with address
-			
-			if(temp->data == key){ // the key is the value we are searching if key is equal to ours main root node we'll return
-				
-				return(key);
-				
-			}
-			else{
-				
-				*y = temp;
-				
-				if(temp->data > key){ // data is bigger and key is smaller hence move towards left side
-					
-					temp = temp->left;
-					
-				}
-				else{
-				
-					temp = temp->right;
-				
-				}
-			}
-			return(NULL);
-		}
-}
-
 
 
 int main(void){
@@ -128,8 +85,8 @@ int main(void){
 		
 		n--; // bcz of while loop and to maintains ours elements quantity
 	}
-	
-	printf("\n display elements:-\t");
+		
+	printf("\n display elements for inorder:- \t");
 	
 	inorder(root);
 	
