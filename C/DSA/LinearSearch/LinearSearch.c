@@ -7,7 +7,7 @@ int linearSearch(int arr[], int TargetElement, int size){
 		
 		if(arr[i] == TargetElement){
 			
-			return i; // just like we return mid in binarysearch when arr[mid] == item
+			return i; // will return the INDEX number on which ours target element is found
 			
 		}
 	}	
@@ -23,9 +23,15 @@ int main(void){
 	
 	printf("total elements are %i\n", size - 1); // for index we says size - 1;
 	
-	printf("Which element you wanna search in bw them : 65 ,99, 32, 1, 0, 3, 48, 7\n");
+	printf("Which element you wanna search in bw them? : ");
 	
-	int TargetElement = get_int("Enter the element you wanna search : ");
+	for( int i = 0; i < size; i++){
+		
+		printf("%d ", arr[i]);
+		
+	}
+	
+	int TargetElement = get_int("\nEnter the element you wanna search : ");
 	
 	int ans = linearSearch(arr, TargetElement, size); // will stores ours answer
 	
@@ -64,4 +70,3 @@ int main(void){
 	}
 	return 0;
 }
-	
