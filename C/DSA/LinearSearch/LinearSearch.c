@@ -37,7 +37,29 @@ int main(void){
 
 	else{
 		
-		printf("Element is found at index numebr %dth of array \n", ans);
+		if( TargetElement == arr[1] ){
+			
+			printf("Element is found at index numebr %dst of array \n", ans);
+			
+		}
+		
+		else if( TargetElement == arr[2] ){
+			
+			printf("Element is found at index numebr %dnd of array \n", ans);
+			
+		}
+		
+		else if( TargetElement == arr[3] ){
+			
+			printf("Element is found at index numebr %drd of array \n", ans);
+			
+		}
+		else{
+		
+			printf("Element is found at index numebr %dth of array \n", ans);
+		
+		}
+		
 		
 	}
 	return 0;
