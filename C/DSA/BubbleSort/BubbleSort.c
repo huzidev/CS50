@@ -46,7 +46,7 @@ int main(void){
 		else{
 			for(int i = 0; i < n; i++){
 				
-				arr[i] = get_int("Value: ");
+				arr[i] = get_int("Value %d: ", i+1);
 		
 			}
 			
