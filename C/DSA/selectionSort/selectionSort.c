@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <cs50.c>
+
 void selectionSort(int arr[], int size){
 	
 	for(int j = 0; j < size - 1; j++){ // size - 1 is becasuse we'll have j and j+1 for swapping by comparision now when we came to all over the end the last element the j will be their but J+1 will points toward NULL therefore iterate till size - 1
@@ -43,7 +44,7 @@ int main(void){
 		
 		for(int i = 0; i < n; i++){
 			
-			arr[i] = get_int("value : ");
+			arr[i] = get_int("value %d: ", i+1);
 			
 		}
 		
