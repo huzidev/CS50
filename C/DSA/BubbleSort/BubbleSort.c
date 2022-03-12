@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <cs50.c>
+
 void BubbleSort(int arr[], int size){
 	
-	for(int i = 0; i < size; i++){ // first loop will moves ours biggest element at right and therefore we'll use size-i-1
+	for(int i = 0; i < size-1; i++){ // this loop is for passes we did size-1 because when all the bigger elements moves at right the smallest element will AUTOMATICALLY be placed at first position and if size is 5 then number of passes will just be 4
 		
-		for(int j = 0; j < size-1; j++){ // size-i-1 is because so ours biggest element will remain at end and and wont changed
+		for(int j = 0; j < size-1-i; j++){ // size-1-i is because, SUPPOSE for first pass we do 5 comparision for second pass we do 4 comparision for 3rd pass we do 3 comparision hence size-1-i
 			
 			if(arr[j] > arr[j+1]){ // for descending order just change this sign to less than sign
 				
@@ -20,7 +21,6 @@ void BubbleSort(int arr[], int size){
 }
 
 void PrintArray(int arr[], int size){
-	
 
 	for(int i = 0; i < size; i++){
 		
@@ -31,8 +31,6 @@ void PrintArray(int arr[], int size){
 }
 
 int main(void){
-	
-//	int arr[] = {25, 20, 6, 98, 3, 4, 1, 0, 54, 36, 4, 2};
 	
 	do{
 		int n = get_int("How many elements you wana sort? ");
@@ -56,7 +54,7 @@ int main(void){
 			
 			printf("The total number of elements are %i\n", size - 1);
 			
-			printf("Before sorting the array: ");
+			printf("\nBefore sorting the array: ");
 			
 			PrintArray(arr, size);
 			
@@ -66,7 +64,7 @@ int main(void){
 			
 			PrintArray(arr, size);
 		}
-		printf("Do you wanna continue?\n");
+		printf("\nDo you wanna continue?\n");
 	}
 	
 	while('y' == getch());
