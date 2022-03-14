@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <cs50.c>
+
 // like playing card first card will be sorted coz we've just one card and that will be sorted
 
 
@@ -13,11 +14,14 @@ void InsertionSort( int arr[], int size){
 		
 		while( j >= 0 && tmp < arr[j]){ // for descending order just change the sign
 			
-			arr[ j + 1 ] = arr[j];
-			
+			arr[j+1] = arr[j]; // we didn't write temp = arr[j] because
+// suppose we've this condition 5, 3, 1, 0
+//								j  i(tmp) now arr[j+1] = arr[j] now we'll have something like this 5, 5, 1, 0
+//								and because of decrement j is now at -1 we'll came outside the loop			
 			j--;
 		}
-		arr[j+1] = tmp;
+		arr[j+1] = tmp; // there j is at -1 because of decrement there for j+1 should be at 0th index and 
+		// because tmp is storing the value 3 we'll insert that value at j+1 at 0th index because we know that j is at -1 currently because of decrement
 	}
 }
 
