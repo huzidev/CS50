@@ -1,46 +1,60 @@
 #include <stdio.h>
 #include <cs50.c>
 
-void SwapElements(int *first, int *second){
+int partition(int arr[], int beg, int end){
 	
-	int temp = *first;
+	int pivot = arr[beg]; // whichever element at beg at will be ours pivot
 	
-	*first = *second;
+	int i = beg+1; // i will be starts from beg+1 because at beg there will be pivot
 	
-	*second = temp;
-}
-
-int Partition(int arr[], int beg, int end){
+	int j = end; // j will be at the end
 	
-	int pivot = arr[end];
-	
-	int pIndex = (beg - 1);
-	
-	for( int i = beg; i < end; i++){ // why we said < end is because the last one is ours PIVOT 
+	do{ // we'll run do while loop because at beg there will be pivot therefore we'll run it then checks the conditions
 		
-		if ( arr[i] < pivot ){ // 14, 17, 8, 90, 11, 2 there 2 is ours PIVOT
+		while( arr[i] <= pivot ){ // suppose 9, 6, 3, 5, 1
+								//			p   i         j
 			
-			pIndex++; // coz it is at -1 index
-
-			SwapElements(&arr[pIndex], &arr[i]);
+			i++; // we'll check the condition if arr[i] is less or equal to pivot then incremenet in this case it is true
+// and we'll run this loop until we there is some condition where arr[i] is greater than pivot there ours loop will stop			
+		}
+		while( arr[j] > pivot ){ // 9, 6, 5, 1
+								// p   i     j check if arr[j] is greater than pivot no it is smaller therefore we'll swap because loop will be break
+			
+			j--; // we'll decremenet j not increment because we've to came from end to beg not from beg to end
+			
 		}
 		
-	}// remember the comparsion will be with every element with the PIVOT one because of FOR loop
+		if( i < j ){ // now in this case i is not less than j because after increment it again and again i will be at end where j is
+			
+			int temp = arr[i];
+			
+			arr[i] = arr[j];
+			
+			arr[j] = temp;
+			
+		}
+		
+	}while( i < j ); // therefore this while loop will also breaks
+	// this loop will break only if ours pivot is bigger than all other element and element at end is smallest then simply swap them both
+	// so smallest element will came at beg and biggest element will came at end
+	int temp = arr[beg]; 
 	
+	arr[beg] = arr[j]; // because j is pointing at last element
 	
-	SwapElements(&arr[ pIndex + 1 ], &arr[end]); // now if ours arr[i] didn't result in lesser than any element we just swap the beg and end with each other
-	
-	return (pIndex + 1); // since it is a recursive function therefore we says return coz recursive functions call itself again and again	
+	arr[j] = temp;
+
+	return j; // make sure to return it to make it clear that at which index we are inserting new node
 }
 
 void QuickSort(int arr[], int beg, int end){
-	
+		
 	if( beg < end ){
 		
-		int pIndex = Partition(arr, beg, end);
+		int partitionindex = partition(arr, beg, end);
 		
-		QuickSort(arr, beg, pIndex - 1);
-		QuickSort(arr, pIndex + 1, end);
+		QuickSort(arr, beg, partitionindex - 1); // for left sub-array
+		
+		QuickSort(arr, partitionindex + 1, end); // for right sub-array
 		
 	}
 	
@@ -73,7 +87,7 @@ int main(void){
 			
 			for(int i = 0; i < n; i++){
 				
-				arr[i] = get_int("Value : ");
+				arr[i] = get_int("Value %d : ", i+1);
 				
 			}
 			
@@ -87,7 +101,7 @@ int main(void){
 			
 			printf("\nAfter sorting: ");
 			
-			QuickSort(arr, 0, size-1);
+			QuickSort(arr, 0, size-1); // means starts form 0 to size-1, 0th index will be receive by low.
 			
 			Print(arr, size);
 		
