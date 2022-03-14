@@ -2,15 +2,6 @@
 #include <cs50.c>
 // like playing card first card will be sorted coz we've just one card and that will be sorted
 
-void print( int arr[], int size){
-	
-	for( int i = 0; i < size; i++){
-		
-		printf("%d ", arr[i]);
-		
-	}
-	printf("\n");
-}
 
 void InsertionSort( int arr[], int size){
 	
@@ -30,6 +21,15 @@ void InsertionSort( int arr[], int size){
 	}
 }
 
+void print( int arr[], int size){
+	
+	for( int i = 0; i < size; i++){
+		
+		printf("%d ", arr[i]);
+		
+	}
+	printf("\n");
+}
 
 int main(void){
 	do{
