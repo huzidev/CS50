@@ -9,7 +9,9 @@ void merge(int arr[], int beg, int mid, int end){
 	
 	int len2 = end - mid;
 	
-	int LeftArr[len1], RightArr[len2]; // coz ours MAIN array will became left and right array
+	int LeftArr[len1];  // coz ours MAIN array will became left and right array
+	
+	int RightArr[len2];
 	
 	for( int i = 0; i < len1; i++){
 		
@@ -118,7 +120,7 @@ int main(void){
 			
 			printf("\nAfter Sorting: ");
 			
-			MergeSort(arr, 0, size-1); // for last index size - 1
+			MergeSort(arr, 0, size-1); // starts from zero till size-1
 			
 			Print(arr, size);	
 		
@@ -131,4 +133,4 @@ int main(void){
 	while('y' == getch());
 	
 	return 0;
-}
+}		
