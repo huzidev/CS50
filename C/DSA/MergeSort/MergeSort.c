@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <cs50.c>
-#include <string.h>
 #include <ctype.h>
 
 // i is for left, j is for right and k is for new array in which all the sorted array will be insert
