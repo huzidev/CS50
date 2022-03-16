@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <cs50.c>
 #include <string.h>
+#include <ctype.h>
+
 // i is for left, j is for right and k is for new array in which all the sorted array will be insert
 
 void merge(int arr[], int beg, int mid, int end, char format){
@@ -139,6 +141,8 @@ int main(void){
 			printf("For Ascending order press 'a' for descending order press 'd'\n");
 			
 			char format = get_char("How you want it to be sorted? ");
+			
+			format = toupper(format);
 			
 			int size = (sizeof(arr) / sizeof(int));
 			
