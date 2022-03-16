@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <cs50.c>
+#include <ctype.h>
 
 // selection sort is just opposite of bubble sort in bubble sort we send all the bigger elements at right in selection sort we send all the smaller elements at left 
 
