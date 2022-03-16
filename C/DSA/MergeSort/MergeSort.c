@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <cs50.c>
-
+#include <string.h>
 // i is for left, j is for right and k is for new array in which all the sorted array will be insert
 
-void merge(int arr[], int beg, int mid, int end){
+void merge(int arr[], int beg, int mid, int end, char format){
 	
 	int len1 = mid - beg + 1;
 	
@@ -35,20 +35,42 @@ void merge(int arr[], int beg, int mid, int end){
 	
 	while( i < len1 && j < len2 ){
 		
-		if( LeftArr[i] < RightArr[j]){
+		if( format == 'a'){
 			
-			arr[k] = LeftArr[i]; // for descending order we simply replace leftArr[i] with rightArr[j]
-			i++;
+				if( LeftArr[i] < RightArr[j]){
+					
+					arr[k] = LeftArr[i]; // for descending order we simply replace leftArr[i] with rightArr[j]
+					i++;
+					
+				}
+				else{
+					
+					arr[k] = RightArr[j];  // for descending order we simply replace rightArr[j] with leftArr[i]
+					j++;
+					
+				}
+				k++; // so after taking an element we'll move toward next index in new array so k will be available at next for new element
+		
+			}
+			
+		else if( format == 'd'){
+			
+				if( LeftArr[i] > RightArr[j]){
+					
+					arr[k] = LeftArr[i]; // for descending order we simply replace leftArr[i] with rightArr[j]
+					i++;
+					
+				}
+				else{
+					
+					arr[k] = RightArr[j];  // for descending order we simply replace rightArr[j] with leftArr[i]
+					j++;
+					
+				}
+				k++; // so after taking an element we'll move toward next index in new array so k will be available at next for new element
+			}
 			
 		}
-		else{
-			
-			arr[k] = RightArr[j];  // for descending order we simply replace rightArr[j] with leftArr[i]
-			j++;
-			
-		}
-		k++; // so after taking an element we'll move toward next index in new array so k will be available at next for new element
-	}
 	
 	while( i < len1 ){
 		
@@ -68,14 +90,18 @@ void merge(int arr[], int beg, int mid, int end){
 }
 
 
-void MergeSort(int arr[], int beg, int end){
+void MergeSort(int arr[], int beg, int end, char format){
 	
 	if( beg < end ){ // if beg is not less than end then this means that ours array is empty
 		
 		int mid = beg + ( end - beg ) / 2;
-		MergeSort(arr, beg, mid); // for left array
-		MergeSort(arr, mid + 1, end); // for right array
-		merge(arr, beg, mid, end); // for merging left and right
+		
+		MergeSort(arr, beg, mid, format); // for left array
+		
+		MergeSort(arr, mid + 1, end, format); // for right array
+		
+		merge(arr, beg, mid, end, format); // for merging left and right
+		
 		
 	}
 }
@@ -110,6 +136,10 @@ int main(void){
 				
 			}
 			
+			printf("For Ascending order press '1' for descending order press '2'\n");
+			
+			char format = get_char("How you want it to be sorted? ");
+			
 			int size = (sizeof(arr) / sizeof(int));
 			
 			printf("Total elements are %i\n", size-1);
@@ -120,7 +150,7 @@ int main(void){
 			
 			printf("\nAfter Sorting: ");
 			
-			MergeSort(arr, 0, size-1); // starts from zero till size-1
+			MergeSort(arr, 0, size-1, format); // starts from zero till size-1
 			
 			Print(arr, size);	
 		
