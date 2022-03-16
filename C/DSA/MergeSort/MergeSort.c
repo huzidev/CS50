@@ -164,8 +164,7 @@ int main(void){
 				
 				printf("Kindly press only 'a' or 'd'!\n");
 				
-			}
-			
+			}	
 		
 		}
 		
