@@ -23,9 +23,19 @@ void InsertionSort( int arr[], int size, char format){
 	//								and because of decrement j is now at -1 we'll came outside the loop			
 				j--;
 			}
-			arr[j+1] = tmp; // there j is at -1 because of decrement there for j+1 should be at 0th index and 
-			// because tmp is storing the value 3 we'll insert that value at j+1 at 0th index because we know that j is at -1 currently because of decrement
+		}	
+		
+		else if( format == 'D' ){
+		
+			while( j >= 0 && tmp > arr[j]){ 
+				
+				arr[j+1] = arr[j]; 	
+					
+				j--;
+			}	
 		}
+		arr[j+1] = tmp; // there j is at -1 because of decrement there for j+1 should be at 0th index and 
+// because tmp is storing the value 3 we'll insert that value at j+1 at 0th index because we know that j is at -1 currently because of decrement
 	}
 }
 
@@ -40,48 +50,59 @@ void print( int arr[], int size){
 }
 
 int main(void){
+	
 	do{
 		int n = get_int("How many elements you wanna sort? ");
 		
 		int arr[n];
 		
-		for(int i = 0; i < n; i++){
-			
-			arr[i] = get_int("Value %d : ", i+1);
-			
-		}
-		
 		if( n == NULL ){
 			
-			printf("You didn't insert an appropraite value \n");
+			printf("You didn't insert an appropriate value!\n");
+			
 		}
 		
 		else{
 		
+			for(int i = 0; i < n; i++){
+					
+				arr[i] = get_int("Value %d : ", i+1);
+					
+			}
+				
 			printf("For Ascending order press 'a' for descending order press 'd'\n");
-			
+				
 			char format = get_char("How you want it to be sorted? ");
-			
+				
 			format = toupper(format);
-		
+			
 			int size = (sizeof(arr) / sizeof(int));
+				
+			if( format == 'A' || format == 'D' ){
+				
+				printf("The total elements are %i", size - 1);
+			
+				printf("\nElements before sortation: ");
+				
+				print(arr, size);
+				
+				printf("Elements after sortation: ");
+				
+				InsertionSort(arr, size, format);
+				
+				print(arr, size);
 		
-			printf("The total elements are %i", size - 1);
-	
-			printf("\nElements before sortation: ");
-		
-			print(arr, size);
-		
-			printf("Elements after sortation: ");
-		
-			InsertionSort(arr, size, format);
-		
-			print(arr, size);
+			}
+			
+			else{
+				
+				printf("Kindly press only 'a' or 'd'!\n");
+				
+			}
 		}
 		
 		printf("Do you wanna continue?\n");
 	}
-	
 	while('y' == getch());
 	
 	return 0;
