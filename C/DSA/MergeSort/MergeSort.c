@@ -143,7 +143,7 @@ int main(void){
 			
 			format = toupper(format);
 			
-			if( format == 'A' || format == 'D'){
+			if( format == 'A' || format == 'D' ){
 				
 				int size = (sizeof(arr) / sizeof(int));
 				

@@ -76,20 +76,28 @@ int main(void){
 			
 			format = toupper(format);
 			
-			int size = (sizeof(arr) / sizeof(int));
-		
-			printf("\n Total elements are %i int the given array \n", size - 1);
-		
-			printf("\nBefore sorting the array: ");
-		
-			printArray(arr, size);
-		
-			printf("\nAfter sorting the array: ");	
-		
-			selectionSort(arr, size, format);
-		
-			printArray(arr, size);
+			if( format == 'A' || format == 'D' ){
+				
+				int size = (sizeof(arr) / sizeof(int));
 			
+				printf("\n Total elements are %i int the given array \n", size - 1);
+			
+				printf("\nBefore sorting the array: ");
+			
+				printArray(arr, size);
+			
+				printf("\nAfter sorting the array: ");	
+			
+				selectionSort(arr, size, format);
+			
+				printArray(arr, size);
+				
+			}
+			else{
+				
+				printf("Kindly press only 'a' or 'd'!\n");
+				
+			}
 		}
 		
 		printf("Do you wanna continue?\n");
