@@ -35,7 +35,7 @@ void merge(int arr[], int beg, int mid, int end, char format){
 	
 	while( i < len1 && j < len2 ){
 		
-		if( format == 'a'){
+		if( format == 'A' ){
 			
 				if( LeftArr[i] < RightArr[j]){
 					
@@ -53,7 +53,7 @@ void merge(int arr[], int beg, int mid, int end, char format){
 		
 			}
 			
-		else if( format == 'd'){
+		else if( format == 'D' ){
 			
 				if( LeftArr[i] > RightArr[j]){
 					
