@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <cs50.c>
+#include <ctype.h>
 
 int partition(int arr[], int beg, int end){
 	
@@ -95,6 +96,8 @@ int main(void){
 			
 			char format = get_char("Which format you would like? ");
 			
+			format = toupper(format);
+			
 			int size = (sizeof(arr) / sizeof(int));
 			
 			printf("Total number of elements are %i\n", size - 1);
@@ -105,7 +108,7 @@ int main(void){
 			
 			printf("\nAfter sorting: ");
 			
-			QuickSort(arr, 0, size-1); // means starts form 0 to size-1, 0th index will be receive by low.
+			QuickSort(arr, 0, size-1, format); // means starts form 0 to size-1, 0th index will be receive by low.
 			
 			Print(arr, size);
 		
