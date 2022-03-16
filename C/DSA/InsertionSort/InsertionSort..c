@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <cs50.c>
+#include <ctype.h>
 
 // like playing card first card will be sorted coz we've just one card and that will be sorted
 
