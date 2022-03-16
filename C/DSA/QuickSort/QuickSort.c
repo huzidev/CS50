@@ -91,6 +91,10 @@ int main(void){
 				
 			}
 			
+			printf("For Ascending order press 'a' for descending order press 'd'\n");
+			
+			char format = get_char("Which format you would like? ");
+			
 			int size = (sizeof(arr) / sizeof(int));
 			
 			printf("Total number of elements are %i\n", size - 1);
