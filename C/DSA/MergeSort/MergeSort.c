@@ -143,19 +143,29 @@ int main(void){
 			
 			format = toupper(format);
 			
-			int size = (sizeof(arr) / sizeof(int));
+			if( format == 'A' || format == 'D'){
+				
+				int size = (sizeof(arr) / sizeof(int));
+				
+				printf("Total elements are %i\n", size-1);
+				
+				printf("Before Sorting: ");
+				
+				Print(arr, size);
+				
+				printf("\nAfter Sorting: ");
+				
+				MergeSort(arr, 0, size-1, format); // starts from zero till size-1
+				
+				Print(arr, size);	
+				
+			}
+			else{
+				
+				printf("Kindly press only 'a' or 'd'!\n");
+				
+			}
 			
-			printf("Total elements are %i\n", size-1);
-			
-			printf("Before Sorting: ");
-			
-			Print(arr, size);
-			
-			printf("\nAfter Sorting: ");
-			
-			MergeSort(arr, 0, size-1, format); // starts from zero till size-1
-			
-			Print(arr, size);	
 		
 		}
 		
