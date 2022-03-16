@@ -60,6 +60,12 @@ int main(void){
 		}
 		else{
 			
+			printf("For Ascending order press 'a' for descending order press 'd'\n");
+			
+			char format = get_char("How you want it to be sorted? ");
+			
+			format = toupper(format);
+			
 			int size = (sizeof(arr) / sizeof(int));
 		
 			printf("\n Total elements are %i int the given array \n", size - 1);
