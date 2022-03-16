@@ -4,7 +4,7 @@
 
 // selection sort is just opposite of bubble sort in bubble sort we send all the bigger elements at right in selection sort we send all the smaller elements at left 
 
-void selectionSort(int arr[], int size){
+void selectionSort(int arr[], int size, char format){
 	
 	// if size is 5 then number of swaps will just be 4 therefore size - 1
 	
@@ -76,7 +76,7 @@ int main(void){
 		
 			printf("\nAfter sorting the array: ");	
 		
-			selectionSort(arr, size);
+			selectionSort(arr, size, format);
 		
 			printArray(arr, size);
 			
