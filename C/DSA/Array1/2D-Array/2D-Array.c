@@ -13,9 +13,8 @@ int main(void){
 		
 		for(int j = 0; j < columns; j++){
 			
-//			arr[i][j] = get_int("Value %d : ",  );
 			arr[i][j] = get_int("value for row %d, value for column %d ", i+1, j+1);
-//			arr[j] = get_int("value for column %d ", j++);
+			
 		}
 		
 	} 
