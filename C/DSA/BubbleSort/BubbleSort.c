@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <cs50.c>
+#include <ctype.h>
 
 void BubbleSort(int arr[], int size){
 	
