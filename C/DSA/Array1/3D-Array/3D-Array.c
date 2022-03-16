@@ -9,4 +9,5 @@ int main(void){
 	
 	int columns = get_int("How many columns you want? ");
 	
+	int arr[parts][row][columns];
 }
