@@ -136,7 +136,7 @@ int main(void){
 				
 			}
 			
-			printf("For Ascending order press '1' for descending order press '2'\n");
+			printf("For Ascending order press 'a' for descending order press 'd'\n");
 			
 			char format = get_char("How you want it to be sorted? ");
 			
