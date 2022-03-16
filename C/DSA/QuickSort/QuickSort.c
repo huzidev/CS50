@@ -2,7 +2,7 @@
 #include <cs50.c>
 #include <ctype.h>
 
-int partition(int arr[], int beg, int end){
+int partition(int arr[], int beg, int end, char format){
 	
 	int pivot = arr[beg]; // whichever element at beg at will be ours pivot
 	
@@ -12,17 +12,37 @@ int partition(int arr[], int beg, int end){
 	
 	do{ // we'll run do while loop because at beg there will be pivot therefore we'll run it then checks the conditions
 		
-		while( arr[i] >= pivot ){ // suppose 9, 6, 3, 5, 1
-								//			p   i         j
-			
-			i++; // we'll check the condition if arr[i] is less or equal to pivot then incremenet in this case it is true
-// and we'll run this loop until we there is some condition where arr[i] is greater than pivot there ours loop will stop			
+		if( format == 'D'){
+		
+			while( arr[i] >= pivot ){ // suppose 9, 6, 3, 5, 1
+									//			p   i         j
+				
+				i++; // we'll check the condition if arr[i] is less or equal to pivot then incremenet in this case it is true
+	// and we'll run this loop until we there is some condition where arr[i] is greater than pivot there ours loop will stop			
+			}
+			while( arr[j] < pivot ){ // 9, 6, 5, 1
+									// p   i     j check if arr[j] is greater than pivot no it is smaller therefore we'll swap because loop will be break
+				
+				j--; // we'll decremenet j not increment because we've to came from end to beg not from beg to end
+				
+			}
+		
 		}
-		while( arr[j] < pivot ){ // 9, 6, 5, 1
-								// p   i     j check if arr[j] is greater than pivot no it is smaller therefore we'll swap because loop will be break
-			
-			j--; // we'll decremenet j not increment because we've to came from end to beg not from beg to end
-			
+		else if( format == 'A'){
+		
+			while( arr[i] <= pivot ){ // suppose 9, 6, 3, 5, 1
+									//			p   i         j
+				
+				i++; // we'll check the condition if arr[i] is less or equal to pivot then incremenet in this case it is true
+	// and we'll run this loop until we there is some condition where arr[i] is greater than pivot there ours loop will stop			
+			}
+			while( arr[j] > pivot ){ // 9, 6, 5, 1
+									// p   i     j check if arr[j] is greater than pivot no it is smaller therefore we'll swap because loop will be break
+				
+				j--; // we'll decremenet j not increment because we've to came from end to beg not from beg to end
+				
+			}
+		
 		}
 		
 		if( i < j ){ // now in this case i is not less than j because after increment it again and again i will be at end where j is
@@ -47,15 +67,15 @@ int partition(int arr[], int beg, int end){
 	return j; // make sure to return it to make it clear that at which index we are inserting new node
 }
 
-void QuickSort(int arr[], int beg, int end){
+void QuickSort(int arr[], int beg, int end, char format){
 		
 	if( beg < end ){
 		
-		int partitionindex = partition(arr, beg, end);
+		int partitionindex = partition(arr, beg, end, format);
 		
-		QuickSort(arr, beg, partitionindex - 1); // for left sub-array
+		QuickSort(arr, beg, partitionindex - 1, format); // for left sub-array
 		
-		QuickSort(arr, partitionindex + 1, end); // for right sub-array
+		QuickSort(arr, partitionindex + 1, end, format); // for right sub-array
 		
 	}
 	
