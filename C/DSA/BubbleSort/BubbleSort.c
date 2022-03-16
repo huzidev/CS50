@@ -2,20 +2,22 @@
 #include <cs50.c>
 #include <ctype.h>
 
-void BubbleSort(int arr[], int size){
+void BubbleSort(int arr[], int size, char format){
 	
 	for(int i = 0; i < size-1; i++){ // this loop is for passes we did size-1 because when all the bigger elements moves at right the smallest element will AUTOMATICALLY be placed at first position and if size is 5 then number of passes will just be 4
 		
 		for(int j = 0; j < size-1-i; j++){ // size-1-i is because, SUPPOSE for first pass we do 5 comparision for second pass we do 4 comparision for 3rd pass we do 3 comparision hence size-1-i
 			
-			if(arr[j] > arr[j+1]){ // for descending order just change this sign to less than sign
-				
-				int temp = arr[j]; // the value of j is convert into temp
-				 
-				arr[j] = arr[j+1]; // the valueof j + 1 is converted into j  now j+1 is empty
-				
-				arr[j+1] = temp; // now temp value which is greater value we get from j is now converted into j+1 called SWAPING
-				
+			if( format == 'A' ){
+				if(arr[j] > arr[j+1]){ // for descending order just change this sign to less than sign
+					
+					int temp = arr[j]; // the value of j is convert into temp
+					 
+					arr[j] = arr[j+1]; // the valueof j + 1 is converted into j  now j+1 is empty
+					
+					arr[j+1] = temp; // now temp value which is greater value we get from j is now converted into j+1 called SWAPING
+					
+				}
 			}
 		}	
 	}	
@@ -67,7 +69,7 @@ int main(void){
 			
 			printf("\nAfter Sorting the array with Bubble Sort: ");
 			
-			BubbleSort(arr, size);
+			BubbleSort(arr, size, format);
 			
 			PrintArray(arr, size);
 		}
