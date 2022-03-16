@@ -73,19 +73,28 @@ int main(void){
 			
 			format = toupper(format);
 			
-			int size = (sizeof(arr) / sizeof(int));
+			if( format == 'A' || format == 'D'){
 			
-			printf("The total number of elements are %i\n", size - 1);
+				int size = (sizeof(arr) / sizeof(int));
+				
+				printf("The total number of elements are %i\n", size - 1);
+				
+				printf("\nBefore sorting the array: ");
+				
+				PrintArray(arr, size);
+				
+				printf("\nAfter Sorting the array with Bubble Sort: ");
+				
+				BubbleSort(arr, size, format);
+				
+				PrintArray(arr, size);
+			}
 			
-			printf("\nBefore sorting the array: ");
-			
-			PrintArray(arr, size);
-			
-			printf("\nAfter Sorting the array with Bubble Sort: ");
-			
-			BubbleSort(arr, size, format);
-			
-			PrintArray(arr, size);
+			else{
+				
+				printf("Kindly press only 'a' or 'd'!\n");
+				
+			}
 		}
 		printf("\nDo you wanna continue?\n");
 	}
