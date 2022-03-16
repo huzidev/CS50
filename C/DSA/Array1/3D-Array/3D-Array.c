@@ -10,4 +10,18 @@ int main(void){
 	int columns = get_int("How many columns you want? ");
 	
 	int arr[parts][row][columns];
+	
+	for(int i = 0; i < parts; i++){
+		
+		for(int j = 0; j < row; j++){
+			
+			for(int k = 0; k < columns; k++){ // k is for columns
+				
+				
+				
+			}
+			
+		}
+		
+	}
 }
