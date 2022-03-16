@@ -17,7 +17,7 @@ int main(void){
 			
 			for(int k = 0; k < columns; k++){ // k is for columns
 				
-				arr[parts][row][columns] = get_int("Value for %d 2D-array's %d row's %d columns ", parts++, row++, columns++ );
+				arr[i][j][k] = get_int("Value for %d 2D-array's %d row's %d columns ", i+1, j+1, k+1 );
 				
 			}
 			
@@ -31,7 +31,7 @@ int main(void){
 			
 			for(int k = 0; k < columns; k++){ // k is for columns
 				
-				printf("%d ", arr[parts][row][columns]);
+				printf("%d ", arr[i][j][k]);
 				
 			}
 			
