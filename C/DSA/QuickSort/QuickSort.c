@@ -118,20 +118,28 @@ int main(void){
 			
 			format = toupper(format);
 			
-			int size = (sizeof(arr) / sizeof(int));
+			if( format == 'A' || format == 'D' ){	
 			
-			printf("Total number of elements are %i\n", size - 1);
-			
-			printf("Before sorting: ");
-			
-			Print(arr, size);
-			
-			printf("\nAfter sorting: ");
-			
-			QuickSort(arr, 0, size-1, format); // means starts form 0 to size-1, 0th index will be receive by low.
-			
-			Print(arr, size);
+				int size = (sizeof(arr) / sizeof(int));
+				
+				printf("Total number of elements are %i\n", size - 1);
+				
+				printf("Before sorting: ");
+				
+				Print(arr, size);
+				
+				printf("\nAfter sorting: ");
+				
+				QuickSort(arr, 0, size-1, format); // means starts form 0 to size-1, 0th index will be receive by low.
+				
+				Print(arr, size);
 		
+			}
+			else{
+				
+				printf("Kindly press only 'a' or 'd'!\n");
+				
+			}
 		}
 		
 		printf("Do you wanna continue?\n");
