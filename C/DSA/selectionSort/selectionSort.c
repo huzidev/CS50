@@ -16,7 +16,7 @@ void selectionSort(int arr[], int size, char format){
 //																  	 j   i // if j is at 0th index then i will be at j+1 index
 // if j is minimum first index then i will be next index hence j + 1			
 			
-			if( format == 'A'){
+			if( format == 'A' ){
 				if(arr[i] < arr[min]){ // min is J and i is j + 1 // FOR DESCENDING ORDER CHANGE THE SIGN
 					
 					min = i;  // coz if i is smaller and min which is j is bigger then make new minimum element and swap it with all the other remaining elements
@@ -24,7 +24,7 @@ void selectionSort(int arr[], int size, char format){
 				}
 			}
 			
-			else if( format == 'D'){
+			else if( format == 'D' ){
 				if(arr[i] < arr[min]){ // min is J and i is j + 1 // FOR DESCENDING ORDER CHANGE THE SIGN
 					
 					min = i;  // coz if i is smaller and min which is j is bigger then make new minimum element and swap it with all the other remaining elements
