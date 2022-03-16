@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <cs50.c>
 
+// for three dimensional array we've to created 3 loops first loop is for all the 2D-dimensional array we wanted to create and rest of the other will be same as of 2D-array
 int main(void){
 	
 	int parts = get_int("How many 2D Array you want? ");
@@ -38,4 +39,7 @@ int main(void){
 		}
 		
 	}
+	
+	return 0;
+	
 }
