@@ -15,10 +15,15 @@ int main(void){
 		
 		for(int j = 0; j < columns; j++){
 			
-			if( i == 0 & j == 0){
+			if( i == 0 && j == 0){
 				arr[i][j] = get_int("value for row %dth, value for column %dth ", i, j); // now values will be print according to specific position of row and columns
 			}
-			
+			else if( i == 0 && j == 1){
+				arr[i][j] = get_int("value for row %dth, value for column %dst ", i, j); // now values will be print according to specific position of row and columns
+			}
+			else if( i == 0 && j == 2){
+				arr[i][j] = get_int("value for row %dth, value for column %dnd ", i, j++); // now values will be print according to specific position of row and columns
+			}
 		}
 		
 	} 
