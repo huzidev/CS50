@@ -21,43 +21,147 @@ int main(void){
 					
 					for(int j=0; j < columns; j++){
 						
-						if( i == i && j == 0 ){
+						if( i == 0 && j == 0 ){
 							
 							arr[i][j] = get_int("value for row %dth, value for column %dth ", i, j);
 							
 							
 						}
-						else if( i == i && j == j ){
+						else if( i == 0 && j == 1 ){
 							
 							arr[i][j] = get_int("value for row %dth, value for column %dst ", i, j);
 							
 							
 						}
-						else if( i == i && j == j ){
+						else if( i == 0 && j == 2 ){
 							
 							arr[i][j] = get_int("value for row %dth, value for column %dnd ", i, j);
 							
 							
 						}
-						else if( i > i && j == j ){
+						else if( i == 0 && j == 3 ){
 							
 							arr[i][j] = get_int("value for row %dth, value for column %drd ", i, j);
 							
 							
 						}
-						else if( i > i && j > j ){
+		
+						else if( i == 0 && j > 3 ){
 							
 							arr[i][j] = get_int("value for row %dth, value for column %dth ", i, j);		
 							
 						}
-					}
-					
-				}
-				
-				
-			}
-
+						
+						
+						
+						
+						else if( i == 1 && j == 0 ){
+							
+							arr[i][j] = get_int("value for row %dst, value for column %dth ", i, j);
+							
+							
+						}
+						
+						else if( i == 1 && j == 1 ){
+							
+							arr[i][j] = get_int("value for row %dst, value for column %dst ", i, j);
+							
+							
+						}
+						else if( i == 1 && j == 2 ){
+							
+							arr[i][j] = get_int("value for row %dst, value for column %dnd ", i, j);
+							
+							
+						}
+						else if( i == 1 && j == 3 ){
+							
+							arr[i][j] = get_int("value for row %dst, value for column %drd ", i, j);
+							
+							
+						}
 		
+						else if( i == 1 && j > 3 ){
+							
+							arr[i][j] = get_int("value for row %dst, value for column %dth ", i, j);		
+							
+						}
+						
+						
+						
+						else if( i == 2 && j == 0 ){
+							
+							arr[i][j] = get_int("value for row %dnd, value for column %dth ", i, j);
+							
+							
+						}
+						else if( i == 2 && j == 1 ){
+							
+							arr[i][j] = get_int("value for row %dnd, value for column %dst ", i, j);
+							
+							
+						}
+						else if( i == 2 && j == 2 ){
+							
+							arr[i][j] = get_int("value for row %dnd, value for column %dnd ", i, j);
+							
+							
+						}
+						else if( i == 2 && j == 3 ){
+							
+							arr[i][j] = get_int("value for row %dnd, value for column %drd ", i, j);
+							
+							
+						}
+		
+						else if( i == 2 && j > 3 ){
+							
+							arr[i][j] = get_int("value for row %dnd, value for column %dth ", i, j);		
+							
+						}
+						
+						
+						else if( i == 3 && j == 0 ){
+							
+							arr[i][j] = get_int("value for row %drd, value for column %dth ", i, j);
+							
+							
+						}
+						else if( i == 3 && j == 1 ){
+							
+							arr[i][j] = get_int("value for row %drd, value for column %dst ", i, j);
+							
+							
+						}
+						else if( i == 3 && j == 2 ){
+							
+							arr[i][j] = get_int("value for row %drd, value for column %dnd ", i, j);
+							
+							
+						}
+						else if( i == 3 && j == 3 ){
+							
+							arr[i][j] = get_int("value for row %drd, value for column %drd ", i, j);
+							
+							
+						}
+		
+						else if( i == 3 && j > 3 ){
+							
+							arr[i][j] = get_int("value for row %drd, value for column %dth ", i, j);		
+							
+						}
+						
+						
+						else if( i > 3 && j > 3 ){
+							
+							arr[i][j] = get_int("value for row %dth, value for column %dth ", i, j);		
+							
+						}
+					}	
+				}	
+			}
+			
 		}	
 	} 
 
