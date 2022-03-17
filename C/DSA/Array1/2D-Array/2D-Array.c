@@ -19,15 +19,34 @@ int main(void){
 				arr[i][j] = get_int("value for row %dth, value for column %dth ", i, j); // now values will be print according to specific position of row and columns
 			}
 			else if( i == 0 && j == 1){
-				arr[i][j] = get_int("value for row %dth, value for column %dst ", i, j); // now values will be print according to specific position of row and columns
+				arr[i][j] = get_int("value for row %dth, value for column %dst ", i, j); 
 			}
 			else if( i == 0 && j == 2){
-				arr[i][j] = get_int("value for row %dth, value for column %dnd ", i, j++); // now values will be print according to specific position of row and columns
+				arr[i][j] = get_int("value for row %dth, value for column %dnd ", i, j); 
 			}
-		}
-		
+			else if( i == 0 && j == 3){
+				arr[i][j] = get_int("value for row %dth, value for column %drd ", i, j); 
+			}
+			else if( i == 0 && j > 3 ){
+				
+				arr[i][j] = get_int("value for row %dth, value for column %dth ", i, j);
+				
+			}
+			else if( i == 1 && j == 0){
+				arr[i][j] = get_int("value for row %dst, value for column %dth ", i, j); 
+			}
+			else if( i == 1 && j == 1){
+				arr[i][j] = get_int("value for row %dst, value for column %dth ", i, j); 
+			}
+			else if( i == 1 && j == 2){
+				arr[i][j] = get_int("value for row %dst, value for column %dnd ", i, j); 
+			}
+			else if( i == 1 && j == 3){
+				arr[i][j] = get_int("value for row %dth, value for column %drd ", i, j); 
+			}
+		}	
 	} 
-	
+
 	for(int i = 0; i < row; i++){
 		
 		for(int j = 0; j < columns; j++){
