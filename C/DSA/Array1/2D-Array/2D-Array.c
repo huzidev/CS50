@@ -15,25 +15,25 @@ int main(void){
 		
 		for(int j = 0; j < columns; j++){
 			
-			if( i == 0 && j == 0){
+			if( i == 0 && j == 0 ) {
 				
 				arr[i][j] = get_int("value for row %dth, value for column %dth ", i, j); // now values will be print according to specific position of row and columns
 		
 			}
 			
-			else if( i == 0 && j == 1){
+			else if( i == 0 && j == 1 ){
 				
 				arr[i][j] = get_int("value for row %dth, value for column %dst ", i, j); 
 				
 			}
 			
-			else if( i == 0 && j == 2){
+			else if( i == 0 && j == 2 ){
 				
 				arr[i][j] = get_int("value for row %dth, value for column %dnd ", i, j); 
 				
 			}
 			
-			else if( i == 0 && j == 3){
+			else if( i == 0 && j == 3 ){
 				
 				arr[i][j] = get_int("value for row %dth, value for column %drd ", i, j); 
 				
@@ -45,25 +45,25 @@ int main(void){
 				
 			}
 			
-			else if( i == 1 && j == 0){
+			else if( i == 1 && j == 0 ){
 				
 				arr[i][j] = get_int("value for row %dst, value for column %dth ", i, j); 
 				
 			}
 			
-			else if( i == 1 && j == 1){
+			else if( i == 1 && j == 1 ){
 				
 				arr[i][j] = get_int("value for row %dst, value for column %dst ", i, j);
 				 
 			}
 			
-			else if( i == 1 && j == 2){
+			else if( i == 1 && j == 2 ){
 				
 				arr[i][j] = get_int("value for row %dst, value for column %dnd ", i, j); 
 				
 			}
 			
-			else if( i == 1 && j == 3){
+			else if( i == 1 && j == 3 ){
 				
 				arr[i][j] = get_int("value for row %dth, value for column %drd ", i, j); 
 				
@@ -75,24 +75,24 @@ int main(void){
 				
 			}
 			
-			else if( i == 2 && j == 0){
+			else if( i == 2 && j == 0 ){
 				
 				arr[i][j] = get_int("value for row %dnd, value for column %dth ", i, j); 
 				
 			}
-			else if( i == 2 && j == 1){
+			else if( i == 2 && j == 1 ){
 				
 				arr[i][j] = get_int("value for row %dnd, value for column %dst ", i, j); 
 				
 			}
 			
-			else if( i == 2 && j == 2){
+			else if( i == 2 && j == 2 ){
 				
 				arr[i][j] = get_int("value for row %dnd, value for column %dnd ", i, j); 
 				
 			}
 			
-			else if( i == 2 && j == 3){
+			else if( i == 2 && j == 3 ){
 				
 				arr[i][j] = get_int("value for row %dnd, value for column %drd ", i, j);
 				 
@@ -104,25 +104,25 @@ int main(void){
 				
 			}
 			
-			else if( i == 3 && j == 0){
+			else if( i == 3 && j == 0 ){
 				
 				arr[i][j] = get_int("value for row %drd, value for column %dth ", i, j);
 				 
 			}
 			
-			else if( i == 3 && j == 1){
+			else if( i == 3 && j == 1 ){
 				
 				arr[i][j] = get_int("value for row %drd, value for column %dst ", i, j); 
 				
 			}
 			
-			else if( i == 3 && j == 2){
+			else if( i == 3 && j == 2 ){
 				
 				arr[i][j] = get_int("value for row %drd, value for column %dnd ", i, j); 
 				
 			}
 			
-			else if( i == 3 && j == 3){
+			else if( i == 3 && j == 3 ){
 				
 				arr[i][j] = get_int("value for row %drd, value for column %drd ", i, j);
 				 
@@ -138,12 +138,11 @@ int main(void){
 				
 				for(int i = 3; i < row; i++){
 					
-					for(int j=0; j < columns; j++){
+					for(int j = 0; j < columns; j++){
 						
 						if( i > 3 && j == 0 ){
 							
 							arr[i][j] = get_int("value for row %dth, value for column %dth ", i, j);
-							
 							
 						}
 						
@@ -151,13 +150,11 @@ int main(void){
 							
 							arr[i][j] = get_int("value for row %dth, value for column %dst ", i, j);
 							
-							
 						}
 						
 						else if( i > 3 && j == 2 ){
 							
 							arr[i][j] = get_int("value for row %dth, value for column %dnd ", i, j);
-							
 							
 						}
 						
@@ -169,7 +166,7 @@ int main(void){
 						
 						else if( i > 3 && j > 3 ){
 							
-							arr[i][j] = get_int("value for row %dth, value for column %dth ", i, j);
+							arr[i][j] = get_int("value for row %dth, value for column %dth ", i, j);	
 							
 						}
 					}		
