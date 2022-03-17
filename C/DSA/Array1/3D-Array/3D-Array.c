@@ -2,6 +2,7 @@
 #include <cs50.c>
 
 // for three dimensional array we've to created 3 loops first loop is for all the 2D-dimensional array we wanted to create and rest of the other will be same as of 2D-array
+
 int main(void){
 	
 	int parts = get_int("How many 2D Array you want? ");
@@ -18,7 +19,17 @@ int main(void){
 			
 			for(int k = 0; k < columns; k++){ // k is for columns
 				
-				arr[i][j][k] = get_int("Value for %d 2D-array's %d row's %d columns ", i+1, j+1, k+1 );
+				if( i == 0 && j == 0 && k == 0 ){
+				
+					arr[i][j][k] = get_int("Value for %dth 2D-array's %dth row's %dth columns ", i, j, k );
+				
+				}
+				
+				else if( i == 0 && j == 0 && k == 1 ){
+				
+					arr[i][j][k] = get_int("Value for %dth 2D-array's %dth row's %dst columns ", i, j, k );
+				
+				}
 				
 			}
 			
