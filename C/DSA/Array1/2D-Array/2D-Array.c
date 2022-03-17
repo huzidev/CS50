@@ -182,8 +182,10 @@ int main(void){
 			}
 			
 		} 
-		printf("Do you wanna continue? ");
-	}while( 'y' == getch());
+		
+		printf("\nDo you wanna continue? \n");
+		
+	}while( 'y' == getch() );
 	
 	return 0;
 	
