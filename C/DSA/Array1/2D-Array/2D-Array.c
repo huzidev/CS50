@@ -65,7 +65,7 @@ int main(void){
 			
 			else if( i == 1 && j == 3 ){
 				
-				arr[i][j] = get_int("value for row %dth, value for column %drd ", i, j); 
+				arr[i][j] = get_int("value for row %dst, value for column %drd ", i, j); 
 				
 			}
 			
