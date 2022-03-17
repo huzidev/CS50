@@ -116,6 +116,38 @@ int main(void){
 					arr[i][j][k] = get_int("Value for %dth 2D-array's %dnd row's %dth columns ", i, j, k );
 				
 				}
+				
+				
+				
+				else if( i == 0 && j == 3 && k == 0 ){
+				
+					arr[i][j][k] = get_int("Value for %dth 2D-array's %drd row's %dth columns ", i, j, k );
+				
+				}
+				
+				else if( i == 0 && j == 3 && k == 1 ){
+				
+					arr[i][j][k] = get_int("Value for %dth 2D-array's %drd row's %dst columns ", i, j, k );
+				
+				}
+				
+				else if( i == 0 && j == 3 && k == 2 ){
+				
+					arr[i][j][k] = get_int("Value for %dth 2D-array's %drd row's %dnd columns ", i, j, k );
+				
+				}
+				
+				else if( i == 0 && j == 3 && k == 3 ){
+				
+					arr[i][j][k] = get_int("Value for %dth 2D-array's %drd row's %drd columns ", i, j, k );
+				
+				}
+				
+				else if( i == 0 && j == 3 && k > 3 ){
+				
+					arr[i][j][k] = get_int("Value for %dth 2D-array's %drd row's %dth columns ", i, j, k );
+				
+				}
 			}
 			
 		}
