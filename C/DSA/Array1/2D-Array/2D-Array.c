@@ -135,42 +135,39 @@ int main(void){
 			}
 			
 			else if( i > 3 && j == 0 ){
-				
-				for(int i = 3; i < row; i++){
 					
-					for(int j = 0; j < columns; j++){
+				for(int j = 0; j < columns; j++){ // because we don't have to update rows anymore therefore we just simply update columns
 						
-						if( i > 3 && j == 0 ){
+					if( i > 3 && j == 0 ){
 							
-							arr[i][j] = get_int("value for row %dth, value for column %dth ", i, j);
+						arr[i][j] = get_int("value for row %dth, value for column %dth ", i, j);
 							
-						}
+					}
 						
-						else if( i > 3 && j == 1 ){
+					else if( i > 3 && j == 1 ){
 							
-							arr[i][j] = get_int("value for row %dth, value for column %dst ", i, j);
+						arr[i][j] = get_int("value for row %dth, value for column %dst ", i, j);
 							
-						}
+					}
 						
-						else if( i > 3 && j == 2 ){
+					else if( i > 3 && j == 2 ){
 							
-							arr[i][j] = get_int("value for row %dth, value for column %dnd ", i, j);
+						arr[i][j] = get_int("value for row %dth, value for column %dnd ", i, j);
 							
-						}
+					}
 						
-						else if( i > 3 && j == 3 ){
+					else if( i > 3 && j == 3 ){
 							
-							arr[i][j] = get_int("value for row %dth, value for column %drd ", i, j);
+						arr[i][j] = get_int("value for row %dth, value for column %drd ", i, j);
 							
-						}
+					}
 						
-						else if( i > 3 && j > 3 ){
+					else if( i > 3 && j > 3 ){
 							
-							arr[i][j] = get_int("value for row %dth, value for column %dth ", i, j);	
+						arr[i][j] = get_int("value for row %dth, value for column %dth ", i, j);	
 							
-						}
-					}		
-				}	
+					}
+				}		
 			}
 		}	
 	} 
