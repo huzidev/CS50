@@ -42,6 +42,46 @@ int main(void){
 					arr[i][j][k] = get_int("Value for %dth 2D-array's %dth row's %drd columns ", i, j, k );
 				
 				}
+				
+				else if( i == 0 && j == 0 && k > 3 ){
+				
+					arr[i][j][k] = get_int("Value for %dth 2D-array's %dth row's %dth columns ", i, j, k );
+				
+				}
+				
+				
+				
+				
+				
+				else if( i == 0 && j == 1 && k == 0 ){
+				
+					arr[i][j][k] = get_int("Value for %dth 2D-array's %dth row's %dth columns ", i, j, k );
+				
+				}
+				
+				else if( i == 0 && j == 1 && k == 1 ){
+				
+					arr[i][j][k] = get_int("Value for %dth 2D-array's %dth row's %dst columns ", i, j, k );
+				
+				}
+				
+				else if( i == 0 && j == 1 && k == 2 ){
+				
+					arr[i][j][k] = get_int("Value for %dth 2D-array's %dth row's %dnd columns ", i, j, k );
+				
+				}
+				
+				else if( i == 0 && j == 1 && k == 3 ){
+				
+					arr[i][j][k] = get_int("Value for %dth 2D-array's %dth row's %drd columns ", i, j, k );
+				
+				}
+				
+				else if( i == 0 && j == 1 && k > 3 ){
+				
+					arr[i][j][k] = get_int("Value for %dth 2D-array's %dth row's %dth columns ", i, j, k );
+				
+				}
 			}
 			
 		}
