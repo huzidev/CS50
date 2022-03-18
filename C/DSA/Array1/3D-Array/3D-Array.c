@@ -557,8 +557,12 @@ int main(void){
 							arr[i][j][k] = get_int("Value for %dth 2D-array's %dth row's %drd column : ", i, j, k);
 							
 						}
+						else if( i > 3 && j > 3 && k > 3 ){
+							
+							arr[i][j][k] = get_int("Value for %dth 2D-array's %dth row's %dth column : ", i, j, k);
+							
+						}
 					}
-					
 				}
 			}
 		}	
