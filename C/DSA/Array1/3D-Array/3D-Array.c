@@ -11,6 +11,12 @@ int main(void){
 	
 	int columns = get_int("How many columns you want? ");
 	
+	if( parts == 0 || row == 0 || columns == 0 ){
+		
+		printf("You didn't insert an appropriate value! ");
+
+	}
+	
 	int arr[parts][row][columns];
 	
 	for(int i = 0; i < parts; i++){ // therefore first all of ours columns will be execute then row then parts
