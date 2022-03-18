@@ -13,13 +13,13 @@ int main(void){
 	
 	int arr[parts][row][columns];
 	
-	for(int i = 0; i < parts; i++){
+	for(int i = 0; i < parts; i++){ // therefore first all of ours columns will be execute then row then parts
 		
-		for(int j = 0; j < row; j++){
+		for(int j = 0; j < row; j++){ // just as the case for columns as rows iterate compeletely then loop for parts will work
 			
-			for(int k = 0; k < columns; k++){ // k is for columns
+			for(int k = 0; k < columns; k++){ // k is for columns & once columns iterate compeletely then loop for rows will work
 				
-				// for 0th 2D-array 0th row and 0 to 3rd columns	
+				// for 3rd 2D-array 3rd row and 0 > 3rd columns		
 						
 				if( i == 0 && j == 0 && k == 0 ){
 					
@@ -51,7 +51,7 @@ int main(void){
 				
 				}
 				
-				// for 0th 2D-array 1st row and 0 to 3rd columns
+				// for 3rd 2D-array 3rd row and 0 > 3rd columns	
 				
 				else if( i == 0 && j == 1 && k == 0 ){
 					
@@ -83,7 +83,7 @@ int main(void){
 				
 				}
 				
-				// for 0th 2D-array 2nd row and 0 to 3rd columns
+				// for 3rd 2D-array 3rd row and 0 > 3rd columns	
 				
 				else if( i == 0 && j == 2 && k == 0 ){
 					
@@ -115,7 +115,7 @@ int main(void){
 				
 				}
 				
-				// for 0th 2D-array 3rd row and 0 to 3rd columns
+				// for 3rd 2D-array 3rd row and 0 > 3rd columns	
 				
 				else if( i == 0 && j == 3 && k == 0 ){
 					
@@ -147,7 +147,7 @@ int main(void){
 				
 				}
 				
-				// for 1st 2D-array 0th row and 0 to 3rd columns	
+				// for 3rd 2D-array 3rd row and 0 > 3rd columns		
 						
 				else if( i == 1 && j == 0 && k == 0 ){
 					
@@ -179,8 +179,7 @@ int main(void){
 					
 				}	
 				
-				
-				// for 1st 2D-array 1st row and 0 to 3rd columns	
+				// for 3rd 2D-array 3rd row and 0 > 3rd columns		
 						
 				else if( i == 1 && j == 1 && k == 0 ){
 					
@@ -212,7 +211,7 @@ int main(void){
 					
 				}
 				
-				// for 1st 2D-array 2nd row and 0 to 3rd columns	
+				// for 3rd 2D-array 3rd row and 0 > 3rd columns			
 						
 				else if( i == 1 && j == 2 && k == 0 ){
 					
@@ -244,7 +243,7 @@ int main(void){
 					
 				}
 				
-				// for 1st 2D-array 3rd row and 0 to 3rd columns	
+				// for 3rd 2D-array 3rd row and 0 > 3rd columns		
 						
 				else if( i == 1 && j == 3 && k == 0 ){
 					
@@ -276,7 +275,7 @@ int main(void){
 					
 				}
 				
-				// for 2nd 2D-array 0th row and 0 to 3rd columns	
+				// for 3rd 2D-array 3rd row and 0 > 3rd columns		
 						
 				else if( i == 2 && j == 0 && k == 0 ){
 					
@@ -308,7 +307,7 @@ int main(void){
 					
 				}
 				
-				// for 2nd 2D-array 1st row and 0 to 3rd columns	
+				// for 3rd 2D-array 3rd row and 0 > 3rd columns		
 						
 				else if( i == 2 && j == 1 && k == 0 ){
 					
@@ -340,7 +339,7 @@ int main(void){
 					
 				}
 					
-				// for 2nd 2D-array 2nd row and 0 to 3rd columns	
+				// for 3rd 2D-array 3rd row and 0 > 3rd columns		
 						
 				else if( i == 2 && j == 2 && k == 0 ){
 					
@@ -372,7 +371,7 @@ int main(void){
 					
 				}
 				
-				// for 2nd 2D-array 3rd row and 0 to 3rd columns	
+				// for 3rd 2D-array 3rd row and 0 > 3rd columns		
 						
 				else if( i == 2 && j == 3 && k == 0 ){
 					
@@ -404,7 +403,7 @@ int main(void){
 					
 				}
 				
-				// for 3rd 2D-array 0th row and 0 to 3rd columns	
+				// for 3rd 2D-array 3rd row and 0 > 3rd columns		
 						
 				else if( i == 3 && j == 0 && k == 0 ){
 					
@@ -436,7 +435,7 @@ int main(void){
 					
 				}
 				
-				// for 3rd 2D-array 1st row and 0 to 3rd columns	
+				// for 3rd 2D-array 3rd row and 0 > 3rd columns		
 						
 				else if( i == 3 && j == 1 && k == 0 ){
 			
@@ -468,7 +467,7 @@ int main(void){
 					
 				}
 				
-				// for 3rd 2D-array 2nd row and 0 to 3rd columns	
+				// for 3rd 2D-array 3rd row and 0 > 3rd columns		
 						
 				else if( i == 3 && j == 2 && k == 0 ){
 					
@@ -500,7 +499,7 @@ int main(void){
 					
 				}
 				
-				// for 3rd 2D-array 3rd row and 0 to 3rd columns	
+				// for 3rd 2D-array 3rd row and 0 > 3rd columns	
 						
 				else if( i == 3 && j == 3 && k == 0 ){
 					
