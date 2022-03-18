@@ -535,7 +535,11 @@ int main(void){
 				
 				else if( i > 3 && j > 3 && k == 0){
 					
-					
+					for( int k = 0; k < columns; k++ ){
+						
+						
+						
+					}
 					
 				}
 			}
