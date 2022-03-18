@@ -109,6 +109,12 @@ int main(void){
 					
 				}
 				
+				else if( i == 0 && j == 2 && k > 3 ){
+			
+					arr[i][j][k] = get_int("Value for %dth 2D-array's %dnd row's %dth column : ", i, j, k);
+				
+				}
+				
 				// for 0th 2D-array 3rd row and 0 to 3rd columns
 				
 				else if( i == 0 && j == 3 && k == 0 ){
@@ -135,6 +141,12 @@ int main(void){
 					
 				}
 				
+				else if( i == 0 && j == 3 && k > 3 ){
+			
+					arr[i][j][k] = get_int("Value for %dth 2D-array's %drd row's %dth column : ", i, j, k);
+				
+				}
+				
 				// for 1st 2D-array 0th row and 0 to 3rd columns	
 						
 				else if( i == 1 && j == 0 && k == 0 ){
@@ -158,6 +170,12 @@ int main(void){
 				else if( i == 1 && j == 0 && k == 3 ){
 					
 					arr[i][j][k] = get_int("Value for %dst 2D-array's %dth row's %drd column : ", i, j, k);
+					
+				}
+				
+				else if( i == 1 && j == 0 && k > 3 ){
+					
+					arr[i][j][k] = get_int("Value for %dst 2D-array's %dth row's %dth column : ", i, j, k);
 					
 				}	
 				
@@ -188,6 +206,11 @@ int main(void){
 					
 				}
 				
+				else if( i == 1 && j == 1 && k > 3 ){
+					
+					arr[i][j][k] = get_int("Value for %dst 2D-array's %dst row's %dth column : ", i, j, k);
+					
+				}
 				
 				// for 1st 2D-array 2nd row and 0 to 3rd columns	
 						
@@ -212,6 +235,12 @@ int main(void){
 				else if( i == 1 && j == 2 && k == 3 ){
 					
 					arr[i][j][k] = get_int("Value for %dst 2D-array's %dnd row's %drd column : ", i, j, k);
+					
+				}
+				
+				else if( i == 1 && j == 2 && k > 3 ){
+					
+					arr[i][j][k] = get_int("Value for %dst 2D-array's %dnd row's %dth column : ", i, j, k);
 					
 				}
 				
@@ -241,6 +270,12 @@ int main(void){
 					
 				}
 				
+				else if( i == 1 && j == 3 && k > 3 ){
+					
+					arr[i][j][k] = get_int("Value for %dst 2D-array's %drd row's %dth column : ", i, j, k);
+					
+				}
+				
 				// for 2nd 2D-array 0th row and 0 to 3rd columns	
 						
 				else if( i == 2 && j == 0 && k == 0 ){
@@ -267,6 +302,11 @@ int main(void){
 					
 				}
 				
+				else if( i == 2 && j == 0 && k > 3 ){
+					
+					arr[i][j][k] = get_int("Value for %dnd 2D-array's %dth row's %dth column : ", i, j, k);
+					
+				}
 				// for 2nd 2D-array 1st row and 0 to 3rd columns	
 						
 				else if( i == 2 && j == 1 && k == 0 ){
