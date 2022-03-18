@@ -19,7 +19,7 @@ int main(void){
 			
 			for(int k = 0; k < columns; k++){ // k is for columns & once columns iterate compeletely then loop for rows will work
 				
-				// for 3rd 2D-array 3rd row and 0 > 3rd columns		
+				// for 0th 2D-array 0th row and 0 > 3rd columns		
 						
 				if( i == 0 && j == 0 && k == 0 ){
 					
@@ -51,7 +51,7 @@ int main(void){
 				
 				}
 				
-				// for 3rd 2D-array 3rd row and 0 > 3rd columns	
+				// for 0th 2D-array 1st row and 0 > 3rd columns	
 				
 				else if( i == 0 && j == 1 && k == 0 ){
 					
@@ -83,7 +83,7 @@ int main(void){
 				
 				}
 				
-				// for 3rd 2D-array 3rd row and 0 > 3rd columns	
+				// for 0th 2D-array 2nd row and 0 > 3rd columns	
 				
 				else if( i == 0 && j == 2 && k == 0 ){
 					
@@ -115,7 +115,7 @@ int main(void){
 				
 				}
 				
-				// for 3rd 2D-array 3rd row and 0 > 3rd columns	
+				// for 0th 2D-array 3rd row and 0 > 3rd columns	
 				
 				else if( i == 0 && j == 3 && k == 0 ){
 					
@@ -147,7 +147,7 @@ int main(void){
 				
 				}
 				
-				// for 3rd 2D-array 3rd row and 0 > 3rd columns		
+				// for 1st 2D-array 0th row and 0 > 3rd columns		
 						
 				else if( i == 1 && j == 0 && k == 0 ){
 					
@@ -179,7 +179,7 @@ int main(void){
 					
 				}	
 				
-				// for 3rd 2D-array 3rd row and 0 > 3rd columns		
+				// for 1st 2D-array 1st row and 0 > 3rd columns		
 						
 				else if( i == 1 && j == 1 && k == 0 ){
 					
@@ -211,7 +211,7 @@ int main(void){
 					
 				}
 				
-				// for 3rd 2D-array 3rd row and 0 > 3rd columns			
+				// for 1st 2D-array 2nd row and 0 > 3rd columns			
 						
 				else if( i == 1 && j == 2 && k == 0 ){
 					
@@ -243,7 +243,7 @@ int main(void){
 					
 				}
 				
-				// for 3rd 2D-array 3rd row and 0 > 3rd columns		
+				// for 1st 2D-array 3rd row and 0 > 3rd columns		
 						
 				else if( i == 1 && j == 3 && k == 0 ){
 					
@@ -275,7 +275,7 @@ int main(void){
 					
 				}
 				
-				// for 3rd 2D-array 3rd row and 0 > 3rd columns		
+				// for 2nd 2D-array 0th row and 0 > 3rd columns		
 						
 				else if( i == 2 && j == 0 && k == 0 ){
 					
@@ -307,7 +307,7 @@ int main(void){
 					
 				}
 				
-				// for 3rd 2D-array 3rd row and 0 > 3rd columns		
+				// for 2nd 2D-array 1st row and 0 > 3rd columns		
 						
 				else if( i == 2 && j == 1 && k == 0 ){
 					
@@ -339,7 +339,7 @@ int main(void){
 					
 				}
 					
-				// for 3rd 2D-array 3rd row and 0 > 3rd columns		
+				// for 2nd 2D-array 2nd row and 0 > 3rd columns		
 						
 				else if( i == 2 && j == 2 && k == 0 ){
 					
@@ -371,7 +371,7 @@ int main(void){
 					
 				}
 				
-				// for 3rd 2D-array 3rd row and 0 > 3rd columns		
+				// for 2nd 2D-array 3rd row and 0 > 3rd columns		
 						
 				else if( i == 2 && j == 3 && k == 0 ){
 					
@@ -403,7 +403,7 @@ int main(void){
 					
 				}
 				
-				// for 3rd 2D-array 3rd row and 0 > 3rd columns		
+				// for 3rd 2D-array 0th row and 0 > 3rd columns		
 						
 				else if( i == 3 && j == 0 && k == 0 ){
 					
@@ -435,7 +435,7 @@ int main(void){
 					
 				}
 				
-				// for 3rd 2D-array 3rd row and 0 > 3rd columns		
+				// for 3rd 2D-array 1st row and 0 > 3rd columns		
 						
 				else if( i == 3 && j == 1 && k == 0 ){
 			
@@ -467,7 +467,7 @@ int main(void){
 					
 				}
 				
-				// for 3rd 2D-array 3rd row and 0 > 3rd columns		
+				// for 3rd 2D-array 2nd row and 0 > 3rd columns		
 						
 				else if( i == 3 && j == 2 && k == 0 ){
 					
