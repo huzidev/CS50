@@ -533,7 +533,7 @@ int main(void){
 				
 				// for 3rd 2D-array 3rd row and 0 > 3rd columns
 				
-				else if( i > 3 && j > 3 && k == 0){
+				else if( i > 3 && j > 3 && k == 0 ){
 					
 					for( int k = 0; k < columns; k++ ){
 						
