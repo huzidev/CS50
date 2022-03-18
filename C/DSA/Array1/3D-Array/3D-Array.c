@@ -530,6 +530,14 @@ int main(void){
 					arr[i][j][k] = get_int("Value for %drd 2D-array's %drd row's %dth column : ", i, j, k);
 					
 				}
+				
+				// for 3rd 2D-array 3rd row and 0 > 3rd columns
+				
+				else if( i > 3 && j > 3 && k == 0){
+					
+					
+					
+				}
 			}
 		}	
 	}	
