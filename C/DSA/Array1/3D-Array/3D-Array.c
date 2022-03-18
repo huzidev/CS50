@@ -19,7 +19,7 @@ int main(void){
 			
 			for(int k = 0; k < columns; k++){ // k is for columns
 				
-				// for 0th 2D-array 0th row and o to 3 columns	
+				// for 0th 2D-array 0th row and 0 to 3 columns	
 						
 				if( i == 0 && j == 0 && k == 0 ){
 					
@@ -45,7 +45,8 @@ int main(void){
 					
 				}	
 				
-				// for 0th 2D-array 0th row and o to 3 columns
+				// for 0th 2D-array 1th row and 0 to 3 columns
+				
 				else if( i == 0 && j == 0 && k == 2 ){
 					
 					arr[i][j][k] = get_int("Value for %dth 2D-array's %dth row's %dth column : ", i, j, k);
