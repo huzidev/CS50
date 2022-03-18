@@ -19,7 +19,7 @@ int main(void){
 			
 			for(int k = 0; k < columns; k++){ // k is for columns
 				
-				// for 0th 2D-array 0th row and 0 to 3 columns	
+				// for 0th 2D-array 0th row and 0 to 3rd columns	
 						
 				if( i == 0 && j == 0 && k == 0 ){
 					
@@ -45,7 +45,7 @@ int main(void){
 					
 				}	
 				
-				// for 0th 2D-array 1th row and 0 to 3 columns
+				// for 0th 2D-array 1st row and 0 to 3rd columns
 				
 				else if( i == 0 && j == 1 && k == 0 ){
 					
@@ -69,7 +69,61 @@ int main(void){
 					
 					arr[i][j][k] = get_int("Value for %dth 2D-array's %dst row's %drd column : ", i, j, k);
 					
-				}					
+				}	
+				
+				// for 0th 2D-array 2nd row and 0 to 3rd columns
+				
+				else if( i == 0 && j == 2 && k == 0 ){
+					
+					arr[i][j][k] = get_int("Value for %dth 2D-array's %dnd row's %dth column : ", i, j, k);
+					
+				}
+				
+				else if( i == 0 && j == 2 && k == 1 ){
+					
+					arr[i][j][k] = get_int("Value for %dth 2D-array's %dnd row's %dst column : ", i, j, k);
+					
+				}
+				
+				else if( i == 0 && j == 2 && k == 2 ){
+					
+					arr[i][j][k] = get_int("Value for %dth 2D-array's %dnd row's %dnd column : ", i, j, k);
+					
+				}
+				
+				else if( i == 0 && j == 2 && k == 3 ){
+					
+					arr[i][j][k] = get_int("Value for %dth 2D-array's %dnd row's %drd column : ", i, j, k);
+					
+				}
+				
+				// for 0th 2D-array 3rd row and 0 to 3rd columns
+				
+				else if( i == 0 && j == 2 && k == 0 ){
+					
+					arr[i][j][k] = get_int("Value for %dth 2D-array's %dnd row's %dth column : ", i, j, k);
+					
+				}
+				
+				else if( i == 0 && j == 2 && k == 1 ){
+					
+					arr[i][j][k] = get_int("Value for %dth 2D-array's %dnd row's %dst column : ", i, j, k);
+					
+				}
+				
+				else if( i == 0 && j == 2 && k == 2 ){
+					
+					arr[i][j][k] = get_int("Value for %dth 2D-array's %dnd row's %dnd column : ", i, j, k);
+					
+				}
+				
+				else if( i == 0 && j == 2 && k == 3 ){
+					
+					arr[i][j][k] = get_int("Value for %dth 2D-array's %dnd row's %drd column : ", i, j, k);
+					
+				}
+				
+								
 			}
 		}	
 	}	
