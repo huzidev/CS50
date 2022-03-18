@@ -537,8 +537,16 @@ int main(void){
 					
 					for( int k = 0; k < columns; k++ ){
 						
-						
-						
+						if( i > 3 && j > 3 && k == 0 ){
+							
+							arr[i][j][k] = get_int("Value for %dth 2D-array's %dth row's %dth column : ", i, j, k);
+							
+						}
+						else if( i > 3 && j > 3 && k == 1 ){
+							
+							arr[i][j][k] = get_int("Value for %dth 2D-array's %dth row's %dth column : ", i, j, k);
+							
+						}
 					}
 					
 				}
