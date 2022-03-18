@@ -47,27 +47,27 @@ int main(void){
 				
 				// for 0th 2D-array 1th row and 0 to 3 columns
 				
-				else if( i == 0 && j == 0 && k == 2 ){
+				else if( i == 0 && j == 1 && k == 0 ){
 					
-					arr[i][j][k] = get_int("Value for %dth 2D-array's %dth row's %dth column : ", i, j, k);
-					
-				}
-				
-				else if( i == 2 && j == 2 && k == 2 ){
-					
-					arr[i][j][k] = get_int("Value for %dth 2D-array's %dth row's %dst column : ", i, j, k);
+					arr[i][j][k] = get_int("Value for %dth 2D-array's %dst row's %dth column : ", i, j, k);
 					
 				}
 				
-				else if( i == 0 && j == 1 && k == 3 ){
+				else if( i == 0 && j == 1 && k == 1 ){
 					
 					arr[i][j][k] = get_int("Value for %dth 2D-array's %dst row's %dst column : ", i, j, k);
 					
 				}
 				
-				else if( i == 1 && j == 1 && k == 1 ){
+				else if( i == 0 && j == 1 && k == 2 ){
 					
-					arr[i][j][k] = get_int("Value for %d 2D-array's %dst row's %dst column : ", i, j, k);
+					arr[i][j][k] = get_int("Value for %dth 2D-array's %dst row's %dnd column : ", i, j, k);
+					
+				}
+				
+				else if( i == 0 && j == 1 && k == 3 ){
+					
+					arr[i][j][k] = get_int("Value for %dth 2D-array's %dst row's %drd column : ", i, j, k);
 					
 				}					
 			}
