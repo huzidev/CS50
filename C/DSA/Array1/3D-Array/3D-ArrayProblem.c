@@ -98,15 +98,43 @@ int main(void){
 	
 	else if( ans == 'O' ){
 			
-			printf("\nAfter appyling algorithm! : ");
+		printf("\nAfter appyling algorithm! : ");
 			
-			for(int i = 0; i < 1; i++){
+		for(int i = 0; i < 1; i++){
 				
-				printf("\n %d %d %d %d %d \n %d %d %d %d %d \n\n %d %d %d %d %d \n %d %d %d %d %d", arr[0][1][0], arr[0][1][1], arr[0][1][2], arr[0][1][3], arr[0][1][4], arr[0][3][0], arr[0][3][1], arr[0][3][2], arr[0][3][3], arr[0][3][4], arr[1][1][0], arr[1][1][1], arr[1][1][2], arr[1][1][3], arr[1][1][4], arr[1][3][0], arr[1][3][1], arr[1][3][2], arr[1][3][3], arr[1][3][4]);
+			printf("\n %d %d %d %d %d \n %d %d %d %d %d \n\n %d %d %d %d %d \n %d %d %d %d %d", arr[0][1][0], arr[0][1][1], arr[0][1][2], arr[0][1][3], arr[0][1][4], arr[0][3][0], arr[0][3][1], arr[0][3][2], arr[0][3][3], arr[0][3][4], arr[1][1][0], arr[1][1][1], arr[1][1][2], arr[1][1][3], arr[1][1][4], arr[1][3][0], arr[1][3][1], arr[1][3][2], arr[1][3][3], arr[1][3][4]);
 				
-			}
-			
 		}
+			
+	}
+	
+	else if( ans == 'K' ){
+			
+		printf("\nAfter appyling algorithm! : ");
+			
+		for( int i = 0; i < parts; i++ ){
+			
+			printf("\n");
+			
+			for( int j = 0; j < row; j++ ){
+				
+				printf("\n");
+					
+				for(int k = 0; k < columns; k++){
+					
+					if( arr[i][j][k] % 2 == 1 ){
+						
+						printf("%d ", arr[i][j][k]);
+						
+					}
+						
+				}
+	
+			}
+				
+		}
+			
+	}
 		
 	printf("\n");
 	
