@@ -31,8 +31,12 @@ int main(void){
 	do{
 		
 		printf("\n********** MENU **********");
+		
 		printf("\n1.Press 'a' for printing only elements diagonally in ascending order ");
+		
 		printf("\n1.Press 'd' for printing only elements diagonally in descending order ");
+		
+		printf("\n.Enter yours choice : ");
 		
 		char ans = get_char("Yours choice? ");
 		
