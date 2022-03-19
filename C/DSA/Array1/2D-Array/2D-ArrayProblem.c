@@ -108,7 +108,15 @@ int main(void){
 			
 			printf("\nAfter appyling algorithm! : ");
 			
-		
+			for( int i = 0; i < row; i++ ){
+				
+				for( int j = 0; j < columns; j++ ){
+					
+					
+					
+				}
+				
+			}
 			
 		}
 		
