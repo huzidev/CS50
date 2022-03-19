@@ -82,7 +82,7 @@ int main(void){
 			
 			for(int i = 0; i < 1; i++){
 				
-				printf("%d %d %d ", arr[0][0], arr[2][2], arr[4][4]);
+				printf("%d %d %d ", arr[0][0], arr[0][1], arr[0][2], arr[0][3], arr[0][4], arr[2][0], arr[2][1], arr[2][2], arr[2][3], arr[2][4], arr[4][0], arr[4][1], arr[4][2], arr[4][3], arr[4][4]);
 				
 			}
 			
@@ -94,7 +94,7 @@ int main(void){
 			
 			for(int i = 0; i < 1; i++){
 				
-				printf("%d %d ", arr[1][1], arr[3][3]);
+				printf("%d %d ", arr[0][0]);
 				
 			}
 			
@@ -102,9 +102,9 @@ int main(void){
 		
 		printf("\nDo you wanna continue? \n");
 	}
-		
-	while( 'y' == getch() );
 	
+	while( 'y' == getch() );
+		
 	return 0;
 	
 }
