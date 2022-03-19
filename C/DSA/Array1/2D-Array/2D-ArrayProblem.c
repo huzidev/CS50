@@ -42,6 +42,10 @@ int main(void){
 		
 		printf("\n1.Press 'D' for printing only elements diagonally in descending order ");
 		
+		printf("\n1.Press 'E' for printing only Even Rows and columns ");
+		
+		printf("\n1.Press 'D' for printing only Odd Rows and columns ");
+		
 		printf("\n.Enter yours choice : ");
 		
 		char ans = get_char("");
@@ -78,7 +82,19 @@ int main(void){
 			
 			for(int i = 0; i < 1; i++){
 				
-				printf("%d %d %d %d %d ", arr[0][0], arr[2][2], arr[4][4]);
+				printf("%d %d %d ", arr[0][0], arr[2][2], arr[4][4]);
+				
+			}
+			
+		}
+		
+		else if( ans == 'O' ){
+			
+			printf("\nAfter appyling algorithm! : ");
+			
+			for(int i = 0; i < 1; i++){
+				
+				printf("%d %d ", arr[1][1], arr[3][3]);
 				
 			}
 			
