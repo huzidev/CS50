@@ -74,7 +74,11 @@ int main(void){
 			
 			for(int i = 0; i < 1; i++){
 				
+				int n = sizeof(arr)/(sizeof(arr[0]));
+				
 				printf("%d %d %d %d %d ", arr[4][4], arr[3][3], arr[2][2], arr[1][1], arr[0][0]);
+				
+				printf("\nTotal elements in this case are %d ", n);
 				
 			}
 			
