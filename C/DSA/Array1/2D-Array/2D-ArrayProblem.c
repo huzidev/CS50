@@ -17,13 +17,23 @@ int main(void){
 		
 			for(int j = 0; j < columns; j++){
 			
-			printf("%d ", arr[i][j]);
+				printf("%d ", arr[i][j]);
 			
 			}
 		
 		}
 		
 		printf("After appyling algorithm! : ")
+		
+		for(int i = 0; i < row; i++){
+		
+			for(int j = 0; j < columns; j++){
+			
+				printf("%d ", arr[i][j]);
+			
+			}
+		
+		}
 		
 		printf("\nDo you wanna continue? \n");
 	}
