@@ -112,8 +112,12 @@ int main(void){
 				
 				for( int j = 0; j < columns; j++ ){
 					
-					
-					
+					if( arr[i][j] % 2 == 1 ){
+						
+						printf("%d ", arr[i][j]);
+						
+					}
+	
 				}
 				
 			}
