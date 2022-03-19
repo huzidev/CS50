@@ -24,20 +24,29 @@ int main(void){
 			}
 		
 		}
+		
 		printf("\nTotal element are %d ", size-1);
 		
 		printf("********** MENU **********");
 		printf("\n1.Press 'a' for printing only elements diagonally in ascending order ");
 		printf("\n1.Press 'd' for printing only elements diagonally in descending order ");
 		
+		char ans = get_char("Yours choice? ");
 		
-		printf("\nAfter appyling algorithm! : ");
+		ans = toupper(ans);
 		
-		for(int i = 0; i < 1; i++){
+		if( ans == 'A' ){
 			
-			printf("%d %d %d %d %d ", arr[0][0], arr[1][1], arr[2][2], arr[3][3], arr[4][4]);
+			printf("\nAfter appyling algorithm! : ");
+			
+			for(int i = 0; i < 1; i++){
+				
+				printf("%d %d %d %d %d ", arr[0][0], arr[1][1], arr[2][2], arr[3][3], arr[4][4]);
+				
+			}
 			
 		}
+		
 		
 		printf("\nDo you wanna continue? \n");
 	}
