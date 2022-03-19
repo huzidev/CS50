@@ -135,6 +135,34 @@ int main(void){
 		}
 			
 	}
+	
+	else if( ans == 'P' ){
+			
+		printf("\nAfter appyling algorithm! : ");
+			
+		for( int i = 0; i < parts; i++ ){
+			
+			printf("\n");
+			
+			for( int j = 0; j < row; j++ ){
+				
+				printf("\n");
+					
+				for(int k = 0; k < columns; k++){
+					
+					if( arr[i][j][k] % 2 == 0 ){
+						
+						printf("%d ", arr[i][j][k]);
+						
+					}
+						
+				}
+	
+			}
+				
+		}
+			
+	}
 		
 	printf("\n");
 	
