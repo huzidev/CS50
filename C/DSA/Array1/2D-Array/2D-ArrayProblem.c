@@ -100,11 +100,15 @@ int main(void){
 				
 				printf("%d %d %d %d %d %d %d %d %d %d ", arr[1][0], arr[1][1], arr[1][2], arr[1][3], arr[1][4], arr[3][0], arr[3][1], arr[3][2], arr[3][3], arr[3][4]);
 				
-				int n = sizeof(arr)/(sizeof(arr[0]));
-				
-				printf("\nTotal elements in this case are %u ", n);
-				
 			}
+			
+		}
+		
+		else if( ans == 'P' ){
+			
+			printf("\nAfter appyling algorithm! : ");
+			
+		
 			
 		}
 		
