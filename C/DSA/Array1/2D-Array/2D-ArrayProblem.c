@@ -13,6 +13,8 @@ int main(void){
 		
 		printf("Before applying algorithm! : ");
 		
+		int size = (sizeof(arr))/sizeof(int);
+		
 		for(int i = 0; i < row; i++){
 		
 			for(int j = 0; j < columns; j++){
@@ -23,13 +25,15 @@ int main(void){
 		
 		}
 		
-		printf("After appyling algorithm! : ")
+		printf("\nTotal element are %d ", size-1);
+		
+		printf("\nAfter appyling algorithm! : ");
 		
 		for(int i = 0; i < row; i++){
 		
 			for(int j = 0; j < columns; j++){
 			
-				printf("%d ", arr[i][j]);
+				printf("%d ", arr[0, 0][1, 1]);
 			
 			}
 		
