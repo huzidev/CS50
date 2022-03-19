@@ -40,13 +40,17 @@ int main(void){
 		
 		printf("\n1.Press 'A' for printing only elements diagonally in ascending order ");
 		
-		printf("\n1.Press 'D' for printing only elements diagonally in descending order ");
+		printf("\n2.Press 'D' for printing only elements diagonally in descending order ");
 		
-		printf("\n1.Press 'E' for printing only Even Rows and columns ");
+		printf("\n3.Press 'E' for printing only Even Rows and columns ");
 		
-		printf("\n1.Press 'D' for printing only Odd Rows and columns ");
+		printf("\n4.Press 'O' for printing only Odd Rows and columns ");
 		
-		printf("\n.Enter yours choice : ");
+		printf("\n5.Press 'P' for printing only Even elements in both rows and columns ");
+		
+		printf("\n6.Press 'K' for printing only Odd elements in both rows and columns ");
+		
+		printf("\n Enter yours choice : ");
 		
 		char ans = get_char("");
 		
@@ -57,12 +61,8 @@ int main(void){
 			printf("\nAfter appyling algorithm! : ");
 			
 			for(int i = 0; i < 1; i++){
-				
-				int n = sizeof(arr)/(sizeof(arr[0]));
-				
-				printf("%d %d %d %d %d ", arr[0][0], arr[1][1], arr[2][2], arr[3][3], arr[4][4]);
-				
-				printf("\nTotal elements in this case are %d ", n);
+					
+				printf("%d ", arr[0][0], arr[1][1], arr[2][2], arr[3][3], arr[4][4]);
 				
 			}
 			
@@ -74,11 +74,7 @@ int main(void){
 			
 			for(int i = 0; i < 1; i++){
 				
-				int n = sizeof(arr)/(sizeof(arr[0]));
-				
 				printf("%d %d %d %d %d ", arr[4][4], arr[3][3], arr[2][2], arr[1][1], arr[0][0]);
-				
-				printf("\nTotal elements in this case are %d ", n);
 				
 			}
 			
@@ -89,7 +85,7 @@ int main(void){
 			printf("\nAfter appyling algorithm! : ");
 			
 			for(int i = 0; i < 1; i++){
-				
+					
 				printf("%d %d %d %d %d %d %d %d %d %d %d %d %d %d %d ", arr[0][0], arr[0][1], arr[0][2], arr[0][3], arr[0][4], arr[2][0], arr[2][1], arr[2][2], arr[2][3], arr[2][4], arr[4][0], arr[4][1], arr[4][2], arr[4][3], arr[4][4]);
 				
 			}
@@ -103,6 +99,10 @@ int main(void){
 			for(int i = 0; i < 1; i++){
 				
 				printf("%d %d %d %d %d %d %d %d %d %d ", arr[1][0], arr[1][1], arr[1][2], arr[1][3], arr[1][4], arr[3][0], arr[3][1], arr[3][2], arr[3][3], arr[3][4]);
+				
+				int n = sizeof(arr)/(sizeof(arr[0]));
+				
+				printf("\nTotal elements in this case are %u ", n);
 				
 			}
 			
