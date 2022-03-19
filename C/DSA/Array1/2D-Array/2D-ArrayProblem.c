@@ -62,7 +62,7 @@ int main(void){
 			
 			for(int i = 0; i < 1; i++){
 					
-				printf("%d ", arr[0][0], arr[1][1], arr[2][2], arr[3][3], arr[4][4]);
+				printf("%d %d %d %d %d ", arr[0][0], arr[1][1], arr[2][2], arr[3][3], arr[4][4]);
 				
 			}
 			
@@ -104,7 +104,7 @@ int main(void){
 			
 		}
 		
-		else if( ans == 'P' ){
+		else if( ans == 'K' ){
 			
 			printf("\nAfter appyling algorithm! : ");
 			
@@ -113,6 +113,26 @@ int main(void){
 				for( int j = 0; j < columns; j++ ){
 					
 					if( arr[i][j] % 2 == 1 ){
+						
+						printf("%d ", arr[i][j]);
+						
+					}
+	
+				}
+				
+			}
+			
+		}
+		
+		else if( ans == 'P' ){
+			
+			printf("\nAfter appyling algorithm! : ");
+			
+			for( int i = 0; i < row; i++ ){
+				
+				for( int j = 0; j < columns; j++ ){
+					
+					if( arr[i][j] % 2 == 0 ){
 						
 						printf("%d ", arr[i][j]);
 						

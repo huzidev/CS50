@@ -14,7 +14,7 @@ int main(void){
 	if( parts == 0 || row == 0 || columns == 0 ){
 		
 		printf("You didn't insert an appropriate value! ");
-
+		
 	}
 	
 	int arr[parts][row][columns];
